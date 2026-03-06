@@ -24,22 +24,31 @@ export default function Home() {
             <span className="text-foreground">Global Prediction Markets</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Unified data, cross-venue analytics, and APIs across Polymarket, Kalshi, Limitless, and Opinion Trade.
+            Unified prediction market data, cross-venue analytics, and developer APIs across{" "}
+            <span className="text-foreground font-medium">Polymarket, Kalshi, Limitless,</span>{" "}and{" "}
+            <span className="text-foreground font-medium">Opinion Trade</span>.
           </p>
-          <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-            <Link href="https://app.eventgraph.ai" target="_blank" rel="noreferrer">
+          <p className="text-sm text-foreground/60 font-medium tracking-wide">
+            Built for traders, developers, and AI agents.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+            <Link href="https://developers.eventgraph.ai" target="_blank" rel="noreferrer">
               <Button size="lg" className="h-12 px-8 text-base group">
-                Explore Terminal
+                Start Free
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Link href="https://developers.eventgraph.ai" target="_blank" rel="noreferrer">
+            <Link href="https://app.eventgraph.ai" target="_blank" rel="noreferrer">
               <Button size="lg" variant="outline" className="h-12 px-8 text-base">
+                Explore Terminal
+              </Button>
+            </Link>
+            <Link href="https://developers.eventgraph.ai/docs" target="_blank" rel="noreferrer">
+              <Button size="lg" variant="ghost" className="h-12 px-6 text-base text-muted-foreground hover:text-foreground">
                 View API Docs
               </Button>
             </Link>
           </div>
-          <p className="text-sm text-muted-foreground pt-2">Built for traders, developers, and AI agents.</p>
         </div>
 
         {/* Dashboard Mockup Visual */}
@@ -98,8 +107,36 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      {/* Problem Section */}
-      <SectionWrapper className="bg-background-subtle border-y border-border">
+      {/* Supported Venues Strip */}
+      <SectionWrapper className="py-10 md:py-12 border-b border-border bg-muted/20">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Aggregating data from the world&apos;s leading prediction markets
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {[
+              { name: 'Polymarket', color: 'from-blue-500/20 to-blue-600/10', dot: 'bg-blue-500' },
+              { name: 'Kalshi', color: 'from-green-500/20 to-green-600/10', dot: 'bg-green-500' },
+              { name: 'Limitless', color: 'from-violet-500/20 to-violet-600/10', dot: 'bg-violet-500' },
+              { name: 'Opinion Trade', color: 'from-orange-500/20 to-orange-600/10', dot: 'bg-orange-500' },
+            ].map(({ name, color, dot }) => (
+              <div
+                key={name}
+                className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r ${color} border border-border text-sm font-semibold text-foreground backdrop-blur-sm`}
+              >
+                <span className={`w-2 h-2 rounded-full ${dot} shadow-sm`} />
+                {name}
+              </div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Problem Section — gradient continuation from hero */}
+      <SectionWrapper className="relative overflow-hidden border-y border-border">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-primary/5 via-blue-500/3 to-transparent" />
+        </div>
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Prediction Market Data Is Fragmented</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">

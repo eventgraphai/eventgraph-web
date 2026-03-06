@@ -23,10 +23,8 @@ export default function ApiPage() {
         <>
             <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20">
                 <div className="max-w-4xl mx-auto text-center space-y-6">
-                    <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-2xl mb-4 text-primary">
-                        <TerminalSquare className="w-8 h-8" />
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Build with the EventGraph API</h1>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">REST API Platform</p>
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">Build with the EventGraph API</h1>
                     <p className="text-xl text-muted-foreground leading-relaxed">
                         A single, powerful REST API to query normalized prediction market data, cross-venue analytics, and arbitrage opportunities.
                     </p>

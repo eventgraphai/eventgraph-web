@@ -22,10 +22,8 @@ export default function AiPage() {
         <>
             <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 bg-primary/5 relative overflow-hidden">
                 <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-                    <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-2xl mb-4 text-primary">
-                        <Bot className="w-8 h-8" />
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Prediction Market Data for AI Agents</h1>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">Model Context Protocol</p>
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">Prediction Market Data for AI Agents</h1>
                     <p className="text-xl text-muted-foreground leading-relaxed">
                         Give your LLMs and custom AI agents direct, structured access to global prediction market intelligence using our native Model Context Protocol (MCP) server.
                     </p>

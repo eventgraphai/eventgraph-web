@@ -22,10 +22,8 @@ export default function TerminalPage() {
         <>
             <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20">
                 <div className="max-w-4xl mx-auto text-center space-y-6">
-                    <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-2xl mb-4 text-primary">
-                        <LayoutDashboard className="w-8 h-8" />
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">EventGraph Terminal</h1>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">Professional Dashboard</p>
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">EventGraph Terminal</h1>
                     <p className="text-xl text-muted-foreground leading-relaxed">
                         The professional dashboard for traders and analysts tracking the pulse of global prediction markets.
                     </p>

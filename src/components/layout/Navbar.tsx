@@ -1,8 +1,29 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const navLinks = [
+    { href: '/product', label: 'Product' },
+    { href: '/terminal', label: 'Terminal' },
+    { href: '/api', label: 'API' },
+    { href: '/ai', label: 'AI Agents' },
+    { href: '/pricing', label: 'Pricing' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/docs', label: 'Docs' },
+];
 
 export function Navbar() {
+    const pathname = usePathname();
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    const isActive = (href: string) =>
+        href === '/' ? pathname === '/' : pathname.startsWith(href);
+
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container mx-auto px-4 md:px-6 flex h-16 items-center justify-between">
@@ -12,14 +33,19 @@ export function Navbar() {
                             Event<span className="text-primary">Graph</span>
                         </span>
                     </Link>
-                    <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
-                        <Link href="/product" className="transition-colors hover:text-foreground">Product</Link>
-                        <Link href="/terminal" className="transition-colors hover:text-foreground">Terminal</Link>
-                        <Link href="/api" className="transition-colors hover:text-foreground">API</Link>
-                        <Link href="/ai" className="transition-colors hover:text-foreground">AI Agents</Link>
-                        <Link href="/pricing" className="transition-colors hover:text-foreground">Pricing</Link>
-                        <Link href="/blog" className="transition-colors hover:text-foreground">Blog</Link>
-                        <Link href="/docs" className="transition-colors hover:text-foreground">Docs</Link>
+                    <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+                        {navLinks.map(({ href, label }) => (
+                            <Link
+                                key={href}
+                                href={href}
+                                className={`transition-colors ${isActive(href)
+                                        ? 'text-foreground font-semibold'
+                                        : 'text-muted-foreground hover:text-foreground'
+                                    }`}
+                            >
+                                {label}
+                            </Link>
+                        ))}
                     </nav>
                 </div>
                 <div className="flex items-center gap-2 md:gap-4">
@@ -30,8 +56,45 @@ export function Navbar() {
                     <Link href="https://developers.eventgraph.ai" target="_blank" rel="noreferrer">
                         <Button>Start Free</Button>
                     </Link>
+                    {/* Mobile hamburger */}
+                    <button
+                        className="md:hidden p-2 rounded-md hover:bg-muted transition-colors"
+                        onClick={() => setMobileOpen(!mobileOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                    </button>
                 </div>
             </div>
+
+            {/* Mobile drawer */}
+            {mobileOpen && (
+                <div className="md:hidden border-t border-border bg-background/98 backdrop-blur px-4 pb-4 pt-3">
+                    <nav className="flex flex-col gap-1">
+                        {navLinks.map(({ href, label }) => (
+                            <Link
+                                key={href}
+                                href={href}
+                                onClick={() => setMobileOpen(false)}
+                                className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${isActive(href)
+                                        ? 'bg-primary/10 text-foreground font-semibold'
+                                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                                    }`}
+                            >
+                                {label}
+                            </Link>
+                        ))}
+                        <div className="pt-3 border-t border-border mt-2 flex flex-col gap-2">
+                            <Link href="https://app.eventgraph.ai" target="_blank" rel="noreferrer">
+                                <Button variant="ghost" className="w-full justify-start">Login</Button>
+                            </Link>
+                            <Link href="https://developers.eventgraph.ai" target="_blank" rel="noreferrer">
+                                <Button className="w-full">Start Free</Button>
+                            </Link>
+                        </div>
+                    </nav>
+                </div>
+            )}
         </header>
     );
 }
