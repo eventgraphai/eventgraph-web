@@ -11,9 +11,7 @@ const navLinks = [
     { href: '/product', label: 'Product' },
     { href: '/terminal', label: 'Terminal' },
     { href: '/api', label: 'API' },
-    { href: '/ai', label: 'AI Agents' },
     { href: '/pricing', label: 'Pricing' },
-    { href: '/blog', label: 'Blog' },
     { href: '/docs', label: 'Docs' },
 ];
 
@@ -25,7 +23,7 @@ export function Navbar() {
         href === '/' ? pathname === '/' : pathname.startsWith(href);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="sticky top-0 z-50 w-full border-b border-border/30 bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/50 dark:supports-[backdrop-filter]:bg-background/40">
             <div className="container mx-auto px-4 md:px-6 flex h-16 items-center justify-between">
                 <div className="flex items-center gap-6">
                     <Link href="/" className="flex items-center space-x-2">
@@ -38,9 +36,9 @@ export function Navbar() {
                             <Link
                                 key={href}
                                 href={href}
-                                className={`transition-colors ${isActive(href)
-                                        ? 'text-foreground font-semibold'
-                                        : 'text-muted-foreground hover:text-foreground'
+                                className={`transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:bg-foreground after:transition-[width] after:duration-200 ${isActive(href)
+                                        ? 'text-foreground font-semibold after:w-full'
+                                        : 'text-muted-foreground hover:text-foreground after:w-0 hover:after:w-full'
                                     }`}
                             >
                                 {label}

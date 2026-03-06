@@ -5,23 +5,23 @@ export function AmbientBackground() {
         <div className="fixed inset-0 overflow-hidden pointer-events-none -z-50">
             {/* ---------- TOP SECTION (Hero Area) ---------- */}
             <div className="absolute top-0 left-0 w-full h-[150vh] opacity-100 transition-opacity duration-1000">
-                {/* Top Edge Warm Orange Glow - Stronger in light mode */}
-                <div className="absolute top-[-20%] left-[-10%] w-[120vw] h-[50vh] rounded-[100%] bg-orange-400/50 dark:bg-orange-950/20 blur-[100px]" />
+                {/* Top deep navy glow - institutional analytics tone */}
+                <div className="absolute top-[-20%] left-[-10%] w-[120vw] h-[50vh] rounded-[100%] bg-blue-600/15 dark:bg-blue-900/25 blur-[120px]" />
 
-                {/* Upper Center Cool Blue Glow */}
-                <div className="absolute top-[0%] left-[-10%] w-[120vw] h-[80vh] rounded-[100%] bg-blue-400/30 dark:bg-blue-950/20 blur-[120px]" />
+                {/* Upper center indigo layer */}
+                <div className="absolute top-[0%] left-[-10%] w-[120vw] h-[80vh] rounded-[100%] bg-indigo-500/10 dark:bg-indigo-950/20 blur-[140px]" />
 
-                {/* Middle/Bottom Soft Purple/Pink Glow for depth */}
-                <div className="absolute top-[40%] right-[-20%] w-[80vw] h-[60vh] rounded-[100%] bg-violet-400/30 dark:bg-violet-950/20 blur-[120px]" />
+                {/* Mid-right violet depth layer */}
+                <div className="absolute top-[40%] right-[-20%] w-[80vw] h-[60vh] rounded-[100%] bg-violet-600/10 dark:bg-violet-950/15 blur-[130px]" />
             </div>
 
             {/* ---------- BOTTOM SECTION (Footer Area) ---------- */}
             <div className="absolute bottom-0 left-0 w-full h-[100vh] opacity-100 transition-opacity duration-1000">
-                {/* Bottom edge warm glow spreading upward */}
-                <div className="absolute bottom-[-20%] left-[-10%] w-[120vw] h-[60vh] rounded-[100%] bg-orange-400/40 dark:bg-orange-950/20 blur-[120px]" />
+                {/* Bottom indigo glow spreading upward */}
+                <div className="absolute bottom-[-20%] left-[-10%] w-[120vw] h-[60vh] rounded-[100%] bg-indigo-600/10 dark:bg-indigo-950/15 blur-[120px]" />
 
-                {/* Cool blue base layer */}
-                <div className="absolute bottom-[0%] right-[-10%] w-[120vw] h-[80vh] rounded-[100%] bg-blue-400/20 dark:bg-blue-950/20 blur-[140px]" />
+                {/* Deep blue base layer */}
+                <div className="absolute bottom-[0%] right-[-10%] w-[120vw] h-[80vh] rounded-[100%] bg-blue-500/8 dark:bg-blue-950/15 blur-[140px]" />
             </div>
         </div>
     );
