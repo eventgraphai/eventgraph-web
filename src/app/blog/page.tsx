@@ -72,12 +72,12 @@ const posts = [
 ];
 
 const categoryColors: Record<string, string> = {
-    "Market Analysis": "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
-    "Developer": "bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400",
-    "Trading Strategy": "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400",
-    "Product Update": "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
-    "Explainer": "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
-    "Engineering": "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400",
+    "Market Analysis": "bg-indigo-100 text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800",
+    "Developer":       "bg-violet-100 text-violet-700 dark:bg-violet-950/50 dark:text-violet-300 border border-violet-200 dark:border-violet-800",
+    "Trading Strategy":"bg-amber-100  text-amber-700  dark:bg-amber-950/40  dark:text-amber-300  border border-amber-200  dark:border-amber-800",
+    "Product Update":  "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800",
+    "Explainer":       "bg-cyan-100   text-cyan-700   dark:bg-cyan-950/40   dark:text-cyan-300   border border-cyan-200   dark:border-cyan-800",
+    "Engineering":     "bg-rose-100   text-rose-700   dark:bg-rose-950/40   dark:text-rose-300   border border-rose-200   dark:border-rose-800",
 };
 
 export default function BlogPage() {

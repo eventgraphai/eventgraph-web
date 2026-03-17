@@ -4,34 +4,55 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-background: hsl(var(--background));
+  /* ── Core surfaces ── */
+  --color-background:        hsl(var(--background));
   --color-background-subtle: hsl(var(--background-subtle));
-  --color-foreground: hsl(var(--foreground));
+  --color-surface:           hsl(var(--surface));
+  --color-surface-raised:    hsl(var(--surface-raised));
+  --color-foreground:        hsl(var(--foreground));
 
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
+  /* ── Card / Popover ── */
+  --color-card:              hsl(var(--card));
+  --color-card-foreground:   hsl(var(--card-foreground));
+  --color-popover:           hsl(var(--popover));
+  --color-popover-foreground:hsl(var(--popover-foreground));
 
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
+  /* ── Accent 1 — Cyan/Teal (primary CTA) ── */
+  --color-primary:           hsl(var(--primary));
+  --color-primary-foreground:hsl(var(--primary-foreground));
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  /* ── Accent 2 — Indigo (analytics, data, AI) ── */
+  --color-indigo:            hsl(var(--indigo));
+  --color-indigo-subtle:     hsl(var(--indigo-subtle));
+  --color-indigo-foreground: hsl(var(--indigo-foreground));
 
-  --color-secondary: hsl(var(--secondary));
+  /* ── Accent 3 — Violet (intelligence, premium) ── */
+  --color-violet:            hsl(var(--violet));
+  --color-violet-subtle:     hsl(var(--violet-subtle));
+  --color-violet-foreground: hsl(var(--violet-foreground));
+
+  /* ── Accent 4 — Amber/Gold (Pro, trending, highlights) ── */
+  --color-amber:             hsl(var(--amber));
+  --color-amber-subtle:      hsl(var(--amber-subtle));
+  --color-amber-foreground:  hsl(var(--amber-foreground));
+
+  /* ── Accent 5 — Emerald (success, live, positive) ── */
+  --color-emerald:           hsl(var(--emerald));
+  --color-emerald-subtle:    hsl(var(--emerald-subtle));
+
+  /* ── UI chrome ── */
+  --color-secondary:         hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-
-  --color-accent: hsl(var(--accent));
+  --color-muted:             hsl(var(--muted));
+  --color-muted-foreground:  hsl(var(--muted-foreground));
+  --color-accent:            hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-
-  --color-destructive: hsl(var(--destructive));
+  --color-destructive:       hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
+  --color-border:            hsl(var(--border));
+  --color-border-strong:     hsl(var(--border-strong));
+  --color-input:             hsl(var(--input));
+  --color-ring:              hsl(var(--ring));
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -39,66 +60,118 @@
 }
 
 @layer base {
+  /* ═══════════════════════════════════════
+     LIGHT THEME
+     Crisp white base, icy-blue tint surfaces
+  ═══════════════════════════════════════ */
   :root {
-    --background: 0 0% 100%;
-    /* Pure white */
-    --background-subtle: 210 15% 97%;
-    /* Slightly warm subtle bg */
-    --foreground: 213 18% 14%;
-    /* Dark neutral text (#1f2328) */
-    --card: 0 0% 100%;
-    --card-foreground: 213 18% 14%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 213 18% 14%;
-    --primary: 190 95% 39%;
-    /* Teal/Cyan accent — matches app CTA */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 213 18% 14%;
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 8% 43%;
-    /* Neutral medium gray */
-    --accent: 210 20% 96%;
-    --accent-foreground: 213 18% 14%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 216 12% 87%;
-    /* Neutral light gray border */
-    --input: 216 12% 87%;
-    --ring: 190 95% 39%;
-    --radius: 0.75rem;
+    /* surfaces — 3 tiers */
+    --background:        0 0% 100%;          /* Pure white page */
+    --background-subtle: 210 20% 98%;        /* Barely-there blue tint */
+    --surface:           210 18% 96%;        /* Cards, panels */
+    --surface-raised:    210 15% 93%;        /* Nested cards, tooltips */
+
+    --foreground:        213 22% 12%;        /* Near-black body text */
+    --card:              0 0% 100%;
+    --card-foreground:   213 22% 12%;
+    --popover:           0 0% 100%;
+    --popover-foreground:213 22% 12%;
+
+    /* Accent 1 — Cyan/Teal */
+    --primary:           190 95% 36%;
+    --primary-foreground:0 0% 100%;
+
+    /* Accent 2 — Indigo */
+    --indigo:            241 70% 58%;
+    --indigo-subtle:     241 80% 96%;
+    --indigo-foreground: 241 70% 35%;
+
+    /* Accent 3 — Violet */
+    --violet:            265 70% 58%;
+    --violet-subtle:     265 80% 96%;
+    --violet-foreground: 265 65% 38%;
+
+    /* Accent 4 — Amber */
+    --amber:             38 95% 48%;
+    --amber-subtle:      40 100% 94%;
+    --amber-foreground:  36 80% 30%;
+
+    /* Accent 5 — Emerald */
+    --emerald:           158 64% 42%;
+    --emerald-subtle:    158 60% 94%;
+
+    /* UI chrome */
+    --secondary:         210 20% 95%;
+    --secondary-foreground:213 22% 20%;
+    --muted:             210 18% 94%;
+    --muted-foreground:  213 12% 44%;
+    --accent:            210 18% 94%;
+    --accent-foreground: 213 22% 12%;
+    --destructive:       0 84% 60%;
+    --destructive-foreground:0 0% 100%;
+    --border:            216 14% 88%;
+    --border-strong:     216 14% 78%;
+    --input:             216 14% 88%;
+    --ring:              190 95% 36%;
+    --radius:            0.75rem;
   }
 
+  /* ═══════════════════════════════════════
+     DARK THEME
+     Deep charcoal base, richer accent palette
+  ═══════════════════════════════════════ */
   .dark {
-    --background: 210 25% 8%;
-    /* Charcoal with hint of blue (#0d1117) */
-    --background-subtle: 215 22% 11%;
-    /* Slightly lighter surface (#151b23) */
-    --foreground: 0 0% 98%;
-    /* Near-white text */
-    --card: 215 22% 11%;
-    /* Card bg = subtle surface */
-    --card-foreground: 0 0% 98%;
-    --popover: 215 22% 11%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 190 90% 50%;
-    /* Bright cyan/teal accent */
-    --primary-foreground: 210 25% 8%;
-    --secondary: 215 18% 14%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 215 18% 14%;
-    --muted-foreground: 210 10% 58%;
-    /* Neutral medium gray */
-    --accent: 215 18% 14%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 215 15% 17%;
-    /* Subtle dark border (#21262d) */
-    --input: 215 15% 17%;
-    --ring: 190 90% 50%;
+    /* surfaces — 3 tiers */
+    --background:        210 26% 7%;         /* Deep charcoal (#0b0f17) */
+    --background-subtle: 215 24% 10%;        /* Second level (#111827) */
+    --surface:           215 22% 13%;        /* Cards, panels (#161d2b) */
+    --surface-raised:    215 20% 17%;        /* Nested cards, tooltips (#1d2636) */
+
+    --foreground:        210 14% 95%;        /* Near-white text */
+    --card:              215 22% 13%;
+    --card-foreground:   210 14% 95%;
+    --popover:           215 22% 13%;
+    --popover-foreground:210 14% 95%;
+
+    /* Accent 1 — Cyan/Teal */
+    --primary:           190 90% 50%;
+    --primary-foreground:210 26% 7%;
+
+    /* Accent 2 — Indigo (brighter in dark) */
+    --indigo:            243 75% 68%;
+    --indigo-subtle:     243 50% 14%;
+    --indigo-foreground: 243 80% 80%;
+
+    /* Accent 3 — Violet (brighter in dark) */
+    --violet:            268 72% 68%;
+    --violet-subtle:     268 40% 13%;
+    --violet-foreground: 268 80% 82%;
+
+    /* Accent 4 — Amber (warm gold in dark) */
+    --amber:             38 92% 58%;
+    --amber-subtle:      38 50% 12%;
+    --amber-foreground:  40 95% 72%;
+
+    /* Accent 5 — Emerald */
+    --emerald:           158 60% 48%;
+    --emerald-subtle:    158 40% 10%;
+
+    /* UI chrome */
+    --secondary:         215 20% 16%;
+    --secondary-foreground:210 14% 90%;
+    --muted:             215 20% 15%;
+    --muted-foreground:  213 10% 56%;
+    --accent:            215 20% 16%;
+    --accent-foreground: 210 14% 95%;
+    --destructive:       0 62% 36%;
+    --destructive-foreground:0 0% 100%;
+    --border:            215 16% 20%;
+    --border-strong:     215 16% 28%;
+    --input:             215 16% 20%;
+    --ring:              190 90% 50%;
   }
 }
+
 
 @layer base {
   * {

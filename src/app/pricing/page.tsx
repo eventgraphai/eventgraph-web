@@ -92,12 +92,12 @@ export default function PricingPage() {
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto relative items-start">
                     {plans.map((plan) =>
                         plan.popular ? (
-                            <div key={plan.name} className="relative p-[2px] rounded-xl bg-gradient-to-b from-blue-500 via-violet-500 to-primary transform md:-translate-y-4 z-10 shadow-xl">
+                            <div key={plan.name} className="relative p-[2px] rounded-xl bg-gradient-to-b from-amber-400 via-orange-400 to-amber-500 transform md:-translate-y-4 z-10 shadow-xl shadow-amber-500/20">
                                 <Card className="flex flex-col h-full bg-card rounded-[10px]">
                                     <CardHeader>
                                         <div className="flex items-center justify-between">
                                             <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                                            <span className="text-xs bg-primary/20 text-primary px-3 py-1 rounded-full font-medium uppercase tracking-wider">Most Popular</span>
+                                            <span className="text-xs bg-amber-400/15 text-amber-600 dark:text-amber-400 px-3 py-1 rounded-full font-semibold border border-amber-400/30 uppercase tracking-wider">Most Popular</span>
                                         </div>
                                         <div className="flex items-baseline gap-1 mt-4 mb-2">
                                             <div className="text-4xl font-bold">{plan.price}</div>
@@ -109,7 +109,7 @@ export default function PricingPage() {
                                         <ul className="space-y-4 flex-1 mb-8">
                                             {plan.features.map(f => (
                                                 <li key={f} className="flex items-start text-sm">
-                                                    <Check className="w-5 h-5 text-primary mr-3 shrink-0" />
+                                                    <Check className="w-5 h-5 text-emerald-500 dark:text-emerald-400 mr-3 shrink-0" />
                                                     <span className="text-foreground">{f}</span>
                                                 </li>
                                             ))}
@@ -142,7 +142,7 @@ export default function PricingPage() {
                                     <ul className="space-y-4 flex-1 mb-8">
                                         {plan.features.map(f => (
                                             <li key={f} className="flex items-start text-sm">
-                                                <Check className="w-5 h-5 text-green-500 mr-3 shrink-0" />
+                                                <Check className="w-5 h-5 text-emerald-500 dark:text-emerald-400 mr-3 shrink-0" />
                                                 <span className="text-foreground">{f}</span>
                                             </li>
                                         ))}

@@ -17,8 +17,8 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,var(--primary)_0%,transparent_1px)] bg-[size:24px_24px] opacity-[0.03] -z-10 pointer-events-none" />
 
         <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
-          <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm text-primary font-medium tracking-wide">
-            <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+          <div className="inline-flex items-center rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-sm text-amber-600 dark:text-amber-400 font-medium tracking-wide">
+            <span className="flex h-2 w-2 rounded-full bg-amber-400 mr-2 animate-pulse"></span>
             EventGraph API v1 is now live
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.15] md:leading-[1.2]">
@@ -230,19 +230,19 @@ export default function Home() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">One platform for normalized data, cross-venue intelligence, and developer tooling across major prediction markets.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 max-w-3xl mx-auto">
               <div className="space-y-1">
-                <p className="text-3xl md:text-4xl font-bold text-foreground">8,000+</p>
+                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-primary to-cyan-400 bg-clip-text text-transparent">8,000+</p>
                 <p className="text-xs text-muted-foreground">Events tracked</p>
               </div>
               <div className="space-y-1">
-                <p className="text-3xl md:text-4xl font-bold text-foreground">20,000+</p>
+                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-indigo-400 to-indigo-600 dark:from-indigo-300 dark:to-indigo-500 bg-clip-text text-transparent">20,000+</p>
                 <p className="text-xs text-muted-foreground">Markets indexed</p>
               </div>
               <div className="space-y-1">
-                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">$7B+</p>
+                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-amber-400 to-orange-400 dark:from-amber-300 dark:to-yellow-400 bg-clip-text text-transparent">$7B+</p>
                 <p className="text-xs text-muted-foreground">Historical trading volume</p>
               </div>
               <div className="space-y-1">
-                <p className="text-3xl md:text-4xl font-bold text-foreground">4+</p>
+                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-violet-400 to-purple-500 dark:from-violet-300 dark:to-violet-500 bg-clip-text text-transparent">4+</p>
                 <p className="text-xs text-muted-foreground">Venues integrated</p>
               </div>
             </div>
@@ -301,7 +301,7 @@ export default function Home() {
                 "Build custom alerts and analytics dashboards"
               ].map((item, i) => (
                 <li key={i} className="flex items-center text-muted-foreground">
-                  <div className="mr-3 p-1 rounded-full bg-primary/20 text-primary">
+                  <div className="mr-3 p-1 rounded-full bg-emerald-500/15 text-emerald-500 dark:text-emerald-400">
                     <Check className="w-3 h-3" />
                   </div>
                   {item}
@@ -494,18 +494,18 @@ export default function Home() {
             </CardHeader>
             <CardContent className="flex-1">
               <ul className="space-y-3 text-sm">
-                <li className="flex items-center"><Check className="w-4 h-4 text-green-500 mr-2" /> 100K API calls / month</li>
-                <li className="flex items-center"><Check className="w-4 h-4 text-green-500 mr-2" /> Basic endpoints</li>
+                <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2" /> 100K API calls / month</li>
+                <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2" /> Basic endpoints</li>
               </ul>
             </CardContent>
           </Card>
 
-          <Card className="flex flex-col border-primary relative transform md:-translate-y-4 shadow-xl">
-            <div className="absolute top-0 inset-x-0 h-1 bg-primary rounded-t-xl" />
+          <Card className="flex flex-col border-amber-400/50 dark:border-amber-400/30 relative transform md:-translate-y-4 shadow-xl shadow-amber-500/10">
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 rounded-t-xl" />
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle className="text-2xl">Pro</CardTitle>
-                <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full font-medium">Popular</span>
+                <span className="text-xs bg-amber-400/15 text-amber-600 dark:text-amber-400 px-2 py-1 rounded-full font-semibold border border-amber-400/30">Most Popular</span>
               </div>
               <div className="text-4xl font-bold mt-4 mb-2">$29<span className="text-lg text-muted-foreground font-normal">/mo</span></div>
               <CardDescription>Good for bots and apps</CardDescription>
