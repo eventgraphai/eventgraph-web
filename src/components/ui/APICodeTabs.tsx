@@ -62,9 +62,9 @@ export function APICodeTabs() {
   const tab = tabs[active];
 
   return (
-    <div className="rounded-xl border border-zinc-700/50 bg-zinc-950 shadow-[0_0_48px_-6px_rgba(99,102,241,0.35)] ring-1 ring-indigo-500/20 overflow-hidden">
+    <div className="rounded-xl border border-zinc-200 dark:border-zinc-700/50 bg-zinc-50 dark:bg-zinc-950 shadow-[0_0_48px_-6px_rgba(99,102,241,0.1)] dark:shadow-[0_0_48px_-6px_rgba(99,102,241,0.35)] ring-1 ring-indigo-500/10 dark:ring-indigo-500/20 overflow-hidden">
       {/* Language tab bar */}
-      <div className="flex items-center gap-1 border-b border-zinc-800 px-4 py-2.5">
+      <div className="flex items-center gap-1 border-b border-zinc-200 dark:border-zinc-800 px-4 py-2.5">
         {tabs.map((t, i) => (
           <button
             key={t.label}
@@ -72,8 +72,8 @@ export function APICodeTabs() {
             className={cn(
               "px-3 py-1.5 text-xs font-semibold rounded-md transition-colors",
               active === i
-                ? "bg-indigo-600/25 text-indigo-300 border border-indigo-500/40"
-                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60"
+                ? "bg-indigo-100 text-indigo-700 border border-indigo-200 dark:bg-indigo-600/25 dark:text-indigo-300 dark:border-indigo-500/40"
+                : "text-zinc-500 hover:text-zinc-800 hover:bg-zinc-200/50 dark:text-zinc-400 dark:hover:text-zinc-200 dark:hover:bg-zinc-800/60"
             )}
           >
             {t.label}
@@ -88,45 +88,45 @@ export function APICodeTabs() {
           <button
             onClick={() => copy(tab.request, "req")}
             aria-label="Copy request"
-            className="text-zinc-500 hover:text-zinc-200 transition-colors p-1 rounded"
+            className="text-zinc-400 hover:text-zinc-700 dark:text-zinc-500 dark:hover:text-zinc-200 transition-colors p-1 rounded"
           >
             {copiedReq ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
           </button>
         </div>
         <div className="px-5 pb-4 overflow-x-auto">
-          <pre className="text-sm text-zinc-100 font-mono leading-7 whitespace-pre">
+          <pre className="text-sm text-zinc-800 dark:text-zinc-100 font-mono leading-7 whitespace-pre">
             <code>{tab.request}</code>
           </pre>
         </div>
       </div>
 
       {/* Divider */}
-      <div className="border-t border-zinc-800" />
+      <div className="border-t border-zinc-200 dark:border-zinc-800" />
 
       {/* RESPONSE block */}
       <div>
         <div className="flex items-center justify-between px-5 pt-4 pb-1">
-          <span className="text-[10px] font-semibold uppercase tracking-widest text-emerald-500/80">Response</span>
+          <span className="text-[10px] font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-500/80">Response</span>
           <button
             onClick={() => copy(tab.response, "res")}
             aria-label="Copy response"
-            className="text-zinc-500 hover:text-zinc-200 transition-colors p-1 rounded"
+            className="text-zinc-400 hover:text-zinc-700 dark:text-zinc-500 dark:hover:text-zinc-200 transition-colors p-1 rounded"
           >
             {copiedRes ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
           </button>
         </div>
         <div className="px-5 pb-4 overflow-x-auto">
-          <pre className="text-sm text-emerald-300/90 font-mono leading-7 whitespace-pre">
+          <pre className="text-sm text-emerald-700 dark:text-emerald-300/90 font-mono leading-7 whitespace-pre">
             <code>{tab.response}</code>
           </pre>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="border-t border-zinc-800 px-5 py-2.5 flex items-center gap-3">
+      <div className="border-t border-zinc-200 dark:border-zinc-800 px-5 py-2.5 flex items-center gap-3">
         <span className="text-xs text-zinc-500 font-mono">{tab.language}</span>
-        <span className="text-xs text-zinc-700">•</span>
-        <span className="flex items-center gap-1.5 text-xs text-emerald-500/80">
+        <span className="text-xs text-zinc-400 dark:text-zinc-700">•</span>
+        <span className="flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-500/80">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
           live
         </span>

@@ -5,11 +5,6 @@ export function Footer() {
         <footer>
             {/* Pre-footer CTA Band */}
             <div className="relative overflow-hidden border-t border-border">
-                {/* Ambient glow */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute left-1/4 top-0 w-96 h-40 rounded-full bg-primary/20 blur-3xl" />
-                    <div className="absolute right-1/4 bottom-0 w-96 h-40 rounded-full bg-blue-500/15 blur-3xl" />
-                </div>
                 <div className="container mx-auto px-4 md:px-6 py-20 md:py-24 text-center relative z-10">
                     <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Get Started Today</p>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
@@ -38,7 +33,7 @@ export function Footer() {
             </div>
 
             {/* Footer Links */}
-            <div className="border-t border-border bg-muted/20">
+            <div className="border-t border-border">
                 <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
                         <div className="col-span-2 lg:col-span-2">

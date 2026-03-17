@@ -86,7 +86,7 @@ export default function BlogPage() {
     return (
         <>
             {/* Hero */}
-            <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 border-b border-border">
+           <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 border-b border-border">
                 <div className="max-w-4xl mx-auto text-center space-y-4">
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">Blog &amp; Insights</h1>
                     <p className="text-xl text-muted-foreground">
@@ -96,7 +96,7 @@ export default function BlogPage() {
             </SectionWrapper>
 
             {/* Featured Post */}
-            <SectionWrapper className="pb-4">
+           <SectionWrapper className="pb-4">
                 <div className="max-w-6xl mx-auto">
                     <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-6">Featured Post</p>
                     <Link href={`/blog/${featured.slug}`}>
@@ -136,7 +136,7 @@ export default function BlogPage() {
             </SectionWrapper>
 
             {/* All Posts Grid */}
-            <SectionWrapper className="bg-background-subtle">
+           <SectionWrapper >
                 <div className="max-w-6xl mx-auto">
                     <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-8">All Posts</p>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

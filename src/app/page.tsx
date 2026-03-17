@@ -49,9 +49,9 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-8 flex-wrap px-6">
             {[
-              { name: 'Polymarket',    src: '/logo-polymarket.webp' },
-              { name: 'Kalshi',        src: '/logo-kalshi.png'      },
-              { name: 'Limitless',     src: '/logo-limitless.png'   },
+              { name: 'Polymarket', src: '/logo-polymarket.webp' },
+              { name: 'Kalshi', src: '/logo-kalshi.png' },
+              { name: 'Limitless', src: '/logo-limitless.png' },
               { name: 'Opinion Trade', src: '/logo-opiniontrade.webp' },
             ].map(({ name, src }) => (
               // eslint-disable-next-line @next/next/no-img-element
@@ -75,15 +75,15 @@ export default function Home() {
           </div>
           {/* Glow behind the window */}
           <div className="absolute -inset-4 rounded-2xl bg-indigo-500/10 blur-2xl pointer-events-none" />
-          <div className="relative rounded-xl border border-border bg-zinc-950 shadow-2xl overflow-hidden">
+          <div className="relative rounded-xl border border-border bg-zinc-50 dark:bg-zinc-950 shadow-2xl overflow-hidden">
             {/* macOS-style title bar */}
-            <div className="flex items-center px-4 py-3 border-b border-border bg-zinc-900/80">
+            <div className="flex items-center px-4 py-3 border-b border-border bg-zinc-100/80 dark:bg-zinc-900/80">
               <div className="flex space-x-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
               </div>
-              <div className="mx-auto bg-zinc-800 border border-white/10 rounded text-xs text-zinc-400 px-24 py-1">
+              <div className="mx-auto bg-zinc-200 dark:bg-zinc-800 border border-black/5 dark:border-white/10 rounded text-xs text-zinc-600 dark:text-zinc-400 px-24 py-1">
                 app.eventgraph.ai/terminal
               </div>
             </div>
@@ -178,10 +178,10 @@ export default function Home() {
             </div>
 
             {/* Intelligence Layer */}
-            <div className="px-6 py-5 rounded-xl border border-violet-500/40 bg-gradient-to-br from-indigo-950/60 to-violet-950/40 text-center w-full max-w-[320px] shadow-xl shadow-violet-500/10 ring-1 ring-violet-500/20">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-400/70 mb-2">EventGraph Intelligence Engine</p>
+            <div className="px-6 py-5 rounded-xl border border-violet-500/30 bg-gradient-to-br from-indigo-50/60 to-violet-50/40 dark:from-indigo-950/60 dark:to-violet-950/40 text-center w-full max-w-[320px] shadow-xl shadow-violet-500/10 ring-1 ring-violet-500/10 dark:ring-violet-500/20">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-500 dark:text-violet-400/70 mb-2">EventGraph Intelligence Engine</p>
               <p className="text-lg font-bold text-foreground mb-3">EventGraph Intelligence Layer</p>
-              <div className="flex flex-col gap-1.5 text-xs text-violet-300/80">
+              <div className="flex flex-col gap-1.5 text-xs text-violet-700 dark:text-violet-300/80">
                 <span>Cross-Venue Intelligence</span>
                 <span>Probability Consensus</span>
                 <span>Arbitrage Detection</span>
@@ -282,7 +282,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Terminal Preview Section */}
-      <SectionWrapper className="bg-background-subtle border-y border-border">
+      <SectionWrapper className="border-y border-border">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           {/* Left — Copy */}
           <div className="space-y-6">
@@ -378,11 +378,6 @@ export default function Home() {
 
       {/* AI Agents & MCP Section */}
       <SectionWrapper className="relative overflow-hidden border-y border-border">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/60 via-background to-violet-950/40" />
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
-        </div>
 
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-14 relative z-10">
@@ -407,32 +402,32 @@ export default function Home() {
             {/* AI Agent tier */}
             <div className="flex items-center justify-center gap-2 flex-wrap w-full">
               {['OpenAI', 'Claude', 'LangChain', 'Cursor'].map((name) => (
-                <span key={name} className="inline-flex items-center gap-1.5 rounded-lg border border-indigo-500/25 bg-indigo-950/50 px-3 py-1.5 text-xs font-mono font-medium text-indigo-300 backdrop-blur-sm">
+                <span key={name} className="inline-flex items-center gap-1.5 rounded-lg border border-indigo-200 dark:border-indigo-500/25 bg-indigo-50 dark:bg-indigo-950/50 px-3 py-1.5 text-xs font-mono font-medium text-indigo-700 dark:text-indigo-300 backdrop-blur-sm">
                   {name}
                 </span>
               ))}
             </div>
             <div className="flex flex-col items-center py-2 gap-0.5">
               <div className="w-px h-5 bg-indigo-500/30" />
-              <div className="text-indigo-400/60 text-xs font-mono">↓</div>
+              <div className="text-indigo-500/60 dark:text-indigo-400/60 text-xs font-mono">↓</div>
               <div className="w-px h-5 bg-indigo-500/30" />
             </div>
             {/* EventGraph MCP tier */}
-            <div className="w-full rounded-xl border border-indigo-500/40 bg-indigo-950/60 px-6 py-5 text-center backdrop-blur-sm shadow-[0_0_32px_-8px_rgba(99,102,241,0.4)]">
-              <p className="text-[10px] uppercase tracking-widest text-indigo-400/60 font-semibold mb-1">EventGraph</p>
-              <p className="text-base font-bold text-indigo-200">MCP + Data Engine</p>
-              <p className="text-xs text-indigo-400/70 mt-1">Normalization · Intelligence · Arbitrage</p>
+            <div className="w-full rounded-xl border border-indigo-200 dark:border-indigo-500/40 bg-indigo-50/80 dark:bg-indigo-950/60 px-6 py-5 text-center backdrop-blur-sm shadow-[0_0_32px_-8px_rgba(99,102,241,0.2)] dark:shadow-[0_0_32px_-8px_rgba(99,102,241,0.4)]">
+              <p className="text-[10px] uppercase tracking-widest text-indigo-500 dark:text-indigo-400/60 font-semibold mb-1">EventGraph</p>
+              <p className="text-base font-bold text-indigo-900 dark:text-indigo-200">MCP + Data Engine</p>
+              <p className="text-xs text-indigo-600 dark:text-indigo-400/70 mt-1">Normalization · Intelligence · Arbitrage</p>
             </div>
             <div className="flex flex-col items-center py-2 gap-0.5">
               <div className="w-px h-5 bg-indigo-500/30" />
-              <div className="text-indigo-400/60 text-xs font-mono">↓</div>
+              <div className="text-indigo-500/60 dark:text-indigo-400/60 text-xs font-mono">↓</div>
               <div className="w-px h-5 bg-indigo-500/30" />
             </div>
             {/* Venues tier */}
             <div className="flex items-center justify-center gap-2 flex-wrap w-full">
               {['Polymarket', 'Kalshi', 'Limitless', 'OpinionTrade'].map((v) => (
-                <span key={v} className="inline-flex items-center gap-1.5 rounded-lg border border-violet-500/20 bg-violet-950/40 px-3 py-1.5 text-xs font-medium text-violet-300 backdrop-blur-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+                <span key={v} className="inline-flex items-center gap-1.5 rounded-lg border border-violet-200 dark:border-violet-500/20 bg-violet-50 dark:bg-violet-950/40 px-3 py-1.5 text-xs font-medium text-violet-700 dark:text-violet-300 backdrop-blur-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-violet-500 dark:bg-violet-400" />
                   {v}
                 </span>
               ))}
@@ -450,8 +445,8 @@ export default function Home() {
                   'eventgraph.detect_arbitrage()',
                   'eventgraph.get_consensus_probability()',
                 ].map(fn => (
-                  <div key={fn} className="flex items-center gap-3 rounded-lg border border-indigo-500/20 bg-zinc-950/80 px-4 py-3 font-mono text-sm text-indigo-300 backdrop-blur-sm">
-                    <span className="text-indigo-500/50">›</span>
+                  <div key={fn} className="flex items-center gap-3 rounded-lg border border-indigo-200 dark:border-indigo-500/20 bg-white/50 dark:bg-zinc-950/80 px-4 py-3 font-mono text-sm text-indigo-700 dark:text-indigo-300 backdrop-blur-sm shadow-sm">
+                    <span className="text-indigo-400 dark:text-indigo-500/50">›</span>
                     {fn}
                   </div>
                 ))}
@@ -463,7 +458,7 @@ export default function Home() {
               <p className="text-xs text-muted-foreground/50 uppercase tracking-widest font-semibold mb-3">Works with</p>
               <div className="flex flex-wrap gap-2">
                 {['OpenAI', 'Claude', 'LangChain', 'OpenClaw', 'AgentBot', 'Cursor'].map((name) => (
-                  <span key={name} className="inline-flex items-center gap-1.5 rounded-full border border-indigo-500/20 bg-indigo-950/40 px-3 py-1 text-xs font-medium text-indigo-300 backdrop-blur-sm">
+                  <span key={name} className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 dark:border-indigo-500/20 bg-indigo-50 dark:bg-indigo-950/40 px-3 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-300 backdrop-blur-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
                     {name}
                   </span>
@@ -581,7 +576,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* FAQ Section */}
-      <SectionWrapper className="bg-background-subtle border-t border-border">
+      <SectionWrapper className="border-t border-border">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Frequently asked questions</h2>
           <div className="space-y-4">

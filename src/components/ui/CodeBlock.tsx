@@ -19,19 +19,19 @@ export function CodeBlock({ code, language = "bash", className, ...props }: Code
     };
 
     return (
-        <div className="relative rounded-lg bg-zinc-950 p-4 border border-zinc-800">
+        <div className="relative rounded-lg bg-zinc-50 dark:bg-zinc-950 p-4 border border-zinc-200 dark:border-zinc-800">
             <div className="flex items-center justify-between mb-2">
-                <span className="text-xs text-zinc-400">{language}</span>
+                <span className="text-xs text-zinc-500 dark:text-zinc-400">{language}</span>
                 <button
                     onClick={onCopy}
-                    className="text-zinc-400 hover:text-zinc-100 transition-colors"
+                    className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
                 >
                     {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
                 </button>
             </div>
             <pre
                 className={cn(
-                    "overflow-x-auto text-sm text-zinc-100 font-mono leading-relaxed",
+                    "overflow-x-auto text-sm text-zinc-800 dark:text-zinc-100 font-mono leading-relaxed",
                     className
                 )}
                 {...props}

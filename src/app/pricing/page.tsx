@@ -62,7 +62,7 @@ export default function PricingPage() {
 
     return (
         <>
-            <SectionWrapper className="pt-28 pb-10 md:pt-36 md:pb-12 border-b border-border">
+           <SectionWrapper className="pt-28 pb-10 md:pt-36 md:pb-12 border-b border-border">
                 <div className="max-w-4xl mx-auto text-center space-y-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-2">Transparent Pricing</p>
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">Flexible plans for any scale</h1>
@@ -88,7 +88,7 @@ export default function PricingPage() {
             </SectionWrapper>
 
             {/* Pricing Cards Section */}
-            <SectionWrapper className="bg-background-subtle">
+           <SectionWrapper >
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto relative items-start">
                     {plans.map((plan) =>
                         plan.popular ? (
@@ -154,7 +154,7 @@ export default function PricingPage() {
                                         ))}
                                     </ul>
                                     <Link href={plan.link} className="w-full mt-auto block">
-                                        <Button variant="outline" className="w-full h-12">{plan.cta}</Button>
+                                        <Button variant={plan.name === "Free" ? "default" : "outline"} className="w-full h-12">{plan.cta}</Button>
                                     </Link>
                                 </CardContent>
                             </Card>

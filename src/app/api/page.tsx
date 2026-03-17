@@ -21,7 +21,7 @@ export default function ApiPage() {
 
     return (
         <>
-            <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20">
+           <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20">
                 <div className="max-w-4xl mx-auto text-center space-y-6">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">REST API Platform</p>
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">Build with the EventGraph API</h1>
@@ -39,7 +39,7 @@ export default function ApiPage() {
                 </div>
             </SectionWrapper>
 
-            <SectionWrapper className="bg-background-subtle border-y border-border">
+           <SectionWrapper className="border-y border-border">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl font-bold tracking-tight">Normalized Data Layer</h2>
@@ -107,7 +107,7 @@ export default function ApiPage() {
                 </div>
             </SectionWrapper>
 
-            <SectionWrapper>
+           <SectionWrapper>
                 <div className="max-w-4xl mx-auto space-y-12">
                     <div className="text-center">
                         <h2 className="text-3xl font-bold tracking-tight mb-4">Core Endpoints</h2>

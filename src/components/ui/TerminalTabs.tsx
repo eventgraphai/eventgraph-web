@@ -102,7 +102,7 @@ export function TerminalTabs() {
       {/* Screenshot area */}
       <div className="rounded-xl border border-border bg-background overflow-hidden shadow-lg">
         {/* Title bar */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-zinc-950/50">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-zinc-100/80 dark:bg-zinc-950/50">
           <div className="flex items-center gap-3">
             <div className="flex space-x-1.5">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500/70"></div>
@@ -133,7 +133,7 @@ export function TerminalTabs() {
           {tab.rows.map((row, j) => (
             <div
               key={j}
-              className="grid grid-cols-3 gap-4 px-5 py-3 border-b border-border/20 last:border-0 hover:bg-white/[0.02] transition-colors"
+              className="grid grid-cols-3 gap-4 px-5 py-3 border-b border-border/20 last:border-0 hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors"
             >
               <span className="text-sm text-foreground/90 font-medium">{row[0]}</span>
               <span className={cn("text-sm text-right font-mono", tab.accent)}>{row[1]}</span>

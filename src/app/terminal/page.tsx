@@ -20,7 +20,7 @@ export default function TerminalPage() {
 
     return (
         <>
-            <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20">
+           <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20">
                 <div className="max-w-4xl mx-auto text-center space-y-6">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">Professional Dashboard</p>
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">EventGraph Terminal</h1>
@@ -38,7 +38,7 @@ export default function TerminalPage() {
                 </div>
             </SectionWrapper>
 
-            <SectionWrapper className="bg-background-subtle border-t border-border">
+           <SectionWrapper className="border-t border-border">
                 <div className="max-w-6xl mx-auto">
                     {/* Main big dashboard mock */}
                     <div className="rounded-xl border border-border bg-background shadow-lg overflow-hidden mb-20 relative">

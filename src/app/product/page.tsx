@@ -12,7 +12,7 @@ export const metadata = {
 export default function ProductPage() {
     return (
         <>
-            <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 border-b border-border relative overflow-hidden">
+           <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 border-b border-border relative overflow-hidden">
                 <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight">The Core Platform</h1>
                     <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -21,7 +21,7 @@ export default function ProductPage() {
                 </div>
             </SectionWrapper>
 
-            <SectionWrapper>
+           <SectionWrapper>
                 <div className="max-w-5xl mx-auto space-y-16">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">

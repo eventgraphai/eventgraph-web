@@ -1,0 +1,11 @@
+
+> eventgraph-website@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.104:3000
+
+✓ Starting...
+✓ Ready in 452ms
+ GET / 200 in 834ms (compile: 360ms, render: 473ms)

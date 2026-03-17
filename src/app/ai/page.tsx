@@ -20,7 +20,7 @@ export default function AiPage() {
 
     return (
         <>
-            <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 bg-primary/5 relative overflow-hidden">
+           <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
                 <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">Model Context Protocol</p>
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">Prediction Market Data for AI Agents</h1>
@@ -38,7 +38,7 @@ export default function AiPage() {
                 </div>
             </SectionWrapper>
 
-            <SectionWrapper>
+           <SectionWrapper>
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl font-bold tracking-tight">Seamless LLM Connectivity</h2>
@@ -76,7 +76,7 @@ export default function AiPage() {
                 </div>
             </SectionWrapper>
 
-            <SectionWrapper className="bg-muted/10 border-t border-border">
+           <SectionWrapper className="border-t border-border">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold tracking-tight mb-4">Example Use Cases</h2>
