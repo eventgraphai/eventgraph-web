@@ -569,10 +569,11 @@ export default function Home() {
       {/* Pricing Preview Section */}
       <SectionWrapper className="min-h-screen flex items-center">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Simple, transparent pricing</h2>
-          <p className="text-lg text-muted-foreground">Start building for free, scale when you need it.</p>
+          <p className="text-sm font-medium text-primary mb-3">Pricing</p>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Start free, scale as you grow</h2>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">No credit card required. Upgrade when you need more.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -581,16 +582,23 @@ export default function Home() {
           >
             <Card className="flex flex-col h-full hover:border-primary/50 transition-colors">
               <CardHeader>
-                <CardTitle className="text-2xl">Free</CardTitle>
-                <div className="text-4xl font-bold mt-4 mb-2">$0</div>
-                <CardDescription>Good for testing</CardDescription>
+                <CardTitle className="text-lg">Free</CardTitle>
+                <div className="text-4xl font-bold mt-3 mb-1">$0<span className="text-base text-muted-foreground font-normal">/mo</span></div>
+                <CardDescription>For exploration and prototyping</CardDescription>
               </CardHeader>
               <CardContent className="flex-1">
                 <ul className="space-y-3 text-sm">
-                  <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2" /> 100K API calls / month</li>
-                  <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2" /> Basic endpoints</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" /> 100K API calls / month</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" /> All basic endpoints</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" /> Market search & discovery</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0" /> Community support</li>
                 </ul>
               </CardContent>
+              <div className="p-6 pt-0">
+                <Link href="https://app.eventgraph.ai" target="_blank" rel="noreferrer">
+                  <Button variant="outline" className="w-full">Get Started</Button>
+                </Link>
+              </div>
             </Card>
           </motion.div>
 
@@ -600,23 +608,29 @@ export default function Home() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Card className="flex flex-col h-full border-amber-400/50 dark:border-amber-400/30 relative transform md:-translate-y-4 shadow-xl shadow-amber-500/10 hover:shadow-amber-500/20 transition-all">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 rounded-t-xl" />
+            <Card className="flex flex-col h-full border-primary/50 relative transform md:-translate-y-4 shadow-xl shadow-primary/10 hover:shadow-primary/20 transition-all">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary via-cyan-400 to-primary rounded-t-xl" />
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-2xl">Pro</CardTitle>
-                  <span className="text-xs bg-amber-400/15 text-amber-600 dark:text-amber-400 px-2 py-1 rounded-full font-semibold border border-amber-400/30">Most Popular</span>
+                  <CardTitle className="text-lg">Pro</CardTitle>
+                  <span className="text-xs bg-primary/10 text-primary px-2.5 py-1 rounded-full font-semibold border border-primary/20">Popular</span>
                 </div>
-                <div className="text-4xl font-bold mt-4 mb-2">$29<span className="text-lg text-muted-foreground font-normal">/mo</span></div>
-                <CardDescription>Good for bots and apps</CardDescription>
+                <div className="text-4xl font-bold mt-3 mb-1">$29<span className="text-base text-muted-foreground font-normal">/mo</span></div>
+                <CardDescription>For developers and trading apps</CardDescription>
               </CardHeader>
               <CardContent className="flex-1">
                 <ul className="space-y-3 text-sm">
-                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2" /> 1M API calls / month</li>
-                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2" /> Cross-venue analytics</li>
-                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2" /> Arbitrage & Probabilities</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2 flex-shrink-0" /> 1M API calls / month</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2 flex-shrink-0" /> Cross-venue analytics</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2 flex-shrink-0" /> Arbitrage detection</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2 flex-shrink-0" /> Priority support</li>
                 </ul>
               </CardContent>
+              <div className="p-6 pt-0">
+                <Link href="https://app.eventgraph.ai" target="_blank" rel="noreferrer">
+                  <Button className="w-full">Get Started</Button>
+                </Link>
+              </div>
             </Card>
           </motion.div>
 
@@ -628,44 +642,107 @@ export default function Home() {
           >
             <Card className="flex flex-col h-full hover:border-border/80 transition-colors">
               <CardHeader>
-                <CardTitle className="text-2xl">Enterprise</CardTitle>
-                <div className="text-4xl font-bold mt-4 mb-2">Custom</div>
-                <CardDescription>Advanced access & streaming</CardDescription>
+                <CardTitle className="text-lg">Enterprise</CardTitle>
+                <div className="text-4xl font-bold mt-3 mb-1">Custom</div>
+                <CardDescription>For teams with advanced needs</CardDescription>
               </CardHeader>
               <CardContent className="flex-1">
                 <ul className="space-y-3 text-sm">
-                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2" /> 10M+ calls</li>
-                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2" /> Historical datasets</li>
-                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2" /> Streaming / WebSocket</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2 flex-shrink-0" /> 10M+ API calls</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2 flex-shrink-0" /> Historical datasets</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2 flex-shrink-0" /> WebSocket streaming</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2 flex-shrink-0" /> Dedicated support & SLA</li>
                 </ul>
               </CardContent>
+              <div className="p-6 pt-0">
+                <Link href="/contact">
+                  <Button variant="outline" className="w-full">Contact Sales</Button>
+                </Link>
+              </div>
             </Card>
           </motion.div>
         </div>
         <div className="mt-12 text-center">
-          <Link href="/pricing">
-            <Button variant="outline" className="min-w-[200px]">View Full Pricing</Button>
+          <Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Compare all features →
           </Link>
         </div>
       </SectionWrapper>
 
-      {/* Blog Preview Section */}
-      <SectionWrapper>
-        <div className="max-w-6xl mx-auto">
+      {/* Insights Section */}
+      <SectionWrapper className="min-h-screen flex items-center border-t border-border/60">
+        <div className="max-w-6xl mx-auto w-full">
           <div className="flex items-end justify-between mb-12">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">From the Blog</h2>
-              <p className="text-lg text-muted-foreground mt-2">Market insights and technical deep dives.</p>
+              <p className="text-sm font-medium text-primary mb-3">Insights</p>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Latest from the team</h2>
+              <p className="text-lg text-muted-foreground mt-2">Market analysis, technical deep dives, and product updates.</p>
             </div>
             <Link href="/blog" className="hidden sm:flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-              View all posts <ArrowRight className="w-4 h-4" />
+              View all <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+
+          {/* Featured post */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
+            className="mb-6"
+          >
+            <Link href="/blog/polymarket-vs-kalshi-liquidity-analysis" className="block">
+              <div className="group grid md:grid-cols-2 gap-0 border border-border rounded-xl overflow-hidden bg-card hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+                <div className="aspect-[16/9] md:aspect-auto bg-gradient-to-br from-primary/10 via-cyan-500/5 to-sky-500/10 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.15),transparent_60%)]" />
+                  <div className="text-center z-10 p-8">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-3">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /></svg>
+                    </div>
+                    <p className="text-xs font-medium text-primary/70">Market Analysis</p>
+                  </div>
+                </div>
+                <div className="p-8 md:p-10 flex flex-col justify-center">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">Market Analysis</span>
+                  <h3 className="text-xl md:text-2xl font-bold leading-snug group-hover:text-primary transition-colors mb-3">Polymarket vs Kalshi: A Deep Dive into Liquidity</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">Comparing order book depth, spread dynamics, and execution quality across the two largest prediction market venues.</p>
+                  <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                    <span>Mar 4, 2026</span>
+                    <span>·</span>
+                    <span>8 min read</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Secondary posts */}
+          <div className="grid md:grid-cols-2 gap-6">
             {[
-              { slug: "polymarket-vs-kalshi-liquidity-analysis", title: "Polymarket vs Kalshi: A Deep Dive into Liquidity", category: "Market Analysis", date: "Mar 4, 2026", readTime: "8 min" },
-              { slug: "building-ai-agents-on-prediction-markets", title: "Building AI Agents That Trade Prediction Markets Using MCP", category: "Developer", date: "Feb 28, 2026", readTime: "12 min" },
-              { slug: "arbitrage-opportunities-in-election-markets", title: "Arbitrage in Election Markets: Patterns, Risks, and Returns", category: "Trading Strategy", date: "Feb 20, 2026", readTime: "10 min" },
+              {
+                slug: "building-ai-agents-on-prediction-markets",
+                title: "Building AI Agents That Trade Prediction Markets Using MCP",
+                description: "A step-by-step guide to connecting AI agents to live prediction market data through EventGraph's MCP server.",
+                category: "Developer",
+                date: "Feb 28, 2026",
+                readTime: "12 min",
+                icon: (
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" /></svg>
+                ),
+                gradient: "from-violet-500/10 via-purple-500/5 to-fuchsia-500/10",
+              },
+              {
+                slug: "arbitrage-opportunities-in-election-markets",
+                title: "Arbitrage in Election Markets: Patterns, Risks, and Returns",
+                description: "How cross-venue price discrepancies create opportunities — and the real-world constraints traders face capturing them.",
+                category: "Trading Strategy",
+                date: "Feb 20, 2026",
+                readTime: "10 min",
+                icon: (
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>
+                ),
+                gradient: "from-emerald-500/10 via-teal-500/5 to-cyan-500/10",
+              },
             ].map((post, i) => (
               <motion.div
                 key={post.slug}
@@ -676,18 +753,34 @@ export default function Home() {
                 className="h-full"
               >
                 <Link href={`/blog/${post.slug}`} className="block h-full">
-                  <div className="group flex flex-col h-full border border-border rounded-xl p-6 bg-card hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">{post.category}</span>
-                    <h3 className="font-semibold text-base leading-snug group-hover:text-primary transition-colors flex-1">{post.title}</h3>
-                    <div className="flex items-center gap-3 mt-4 text-xs text-muted-foreground">
-                      <span>{post.date}</span>
-                      <span>·</span>
-                      <span>{post.readTime} read</span>
+                  <div className="group flex flex-col h-full border border-border rounded-xl overflow-hidden bg-card hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300">
+                    <div className={`aspect-[2/1] bg-gradient-to-br ${post.gradient} flex items-center justify-center relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_60%)]" />
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center z-10">
+                        {post.icon}
+                      </div>
+                    </div>
+                    <div className="p-6 flex flex-col flex-1">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">{post.category}</span>
+                      <h3 className="font-semibold text-base leading-snug group-hover:text-primary transition-colors flex-1">{post.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{post.description}</p>
+                      <div className="flex items-center gap-3 mt-4 text-xs text-muted-foreground">
+                        <span>{post.date}</span>
+                        <span>·</span>
+                        <span>{post.readTime} read</span>
+                      </div>
                     </div>
                   </div>
                 </Link>
               </motion.div>
             ))}
+          </div>
+
+          {/* Mobile "View all" link */}
+          <div className="mt-8 text-center sm:hidden">
+            <Link href="/blog" className="text-sm font-medium text-primary hover:underline">
+              View all posts →
+            </Link>
           </div>
         </div>
       </SectionWrapper>
@@ -695,40 +788,29 @@ export default function Home() {
       {/* FAQ Section */}
       <SectionWrapper className="border-t border-border/60">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Frequently asked questions</h2>
-          <div className="space-y-4">
+          <p className="text-sm font-medium text-primary text-center mb-3">FAQ</p>
+          <h2 className="text-3xl font-bold tracking-tight mb-10 text-center">Common questions</h2>
+          <div className="space-y-3">
             {[
               {
-                q: "What prediction markets does EventGraph support?",
-                a: "EventGraph aggregates data from major prediction market venues including Polymarket, Kalshi, Limitless, and OpinionTrade. Markets are normalized into a unified schema so developers and traders can easily compare events, prices, and probabilities across venues. We continuously add new venues to the EventGraph index.",
-              },
-              {
                 q: "What makes EventGraph different from individual venue APIs?",
-                a: "Prediction market data is fragmented across platforms. EventGraph aggregates and normalizes markets across venues so you can compare probabilities, detect cross-venue arbitrage opportunities, analyze consensus probabilities, and build applications on a unified dataset — instead of integrating multiple APIs.",
-              },
-              {
-                q: "How fresh is EventGraph market data?",
-                a: "EventGraph continuously ingests market data from supported venues and updates normalized market states with low-latency polling. For most use cases the API provides near real-time market updates, with WebSocket streaming support available for enterprise integrations.",
-              },
-              {
-                q: "Can I build trading tools or analytics dashboards with EventGraph?",
-                a: "Yes. Developers use EventGraph to build prediction market dashboards, arbitrage detection tools, research and analytics platforms, automated trading agents, and probability tracking systems — all accessible through the EventGraph REST API.",
-              },
-              {
-                q: "Does EventGraph detect arbitrage opportunities?",
-                a: "Yes. EventGraph compares market prices across venues and exposes endpoints that highlight cross-venue price discrepancies and arbitrage opportunities. These signals allow traders and applications to identify markets where probability differences exist across platforms.",
+                a: "Prediction market data is fragmented across platforms with incompatible schemas. EventGraph normalizes everything into a single API — compare probabilities, detect arbitrage, and build on a unified dataset instead of integrating each venue separately.",
               },
               {
                 q: "Can I use EventGraph with AI agents?",
-                a: "Yes. EventGraph provides an MCP server (Model Context Protocol) allowing AI agents to query prediction markets directly. AI systems can summarize market consensus, compare cross-venue probabilities, analyze trends, and build autonomous trading agents. Compatible with OpenAI, Claude, LangChain, and other agent frameworks.",
+                a: "Yes. EventGraph ships an MCP server (Model Context Protocol) so AI agents can query prediction markets directly. Works with OpenAI, Claude, LangChain, and other agent frameworks out of the box.",
               },
               {
-                q: "How many markets does EventGraph track?",
-                a: "EventGraph tracks thousands of active prediction markets across supported venues. The platform focuses on high-liquidity and relevant markets, while still exposing full datasets for developers who want broader coverage.",
+                q: "How quickly can I integrate?",
+                a: "Most developers are making their first API call within minutes. The REST API uses simple GET endpoints with JSON responses — no SDKs required, though we provide client libraries for Python and TypeScript.",
               },
               {
-                q: "Do I need accounts on prediction market platforms?",
-                a: "No. EventGraph only provides data and intelligence. Trading execution happens directly on the underlying venues like Polymarket or Kalshi.",
+                q: "Is there a free tier?",
+                a: "Yes. The free plan includes generous API limits so you can explore the data, prototype applications, and validate your use case before upgrading. No credit card required.",
+              },
+              {
+                q: "Which prediction markets are supported?",
+                a: "EventGraph aggregates data from Polymarket, Kalshi, Limitless, and OpinionTrade — covering thousands of active markets. We continuously add new venues to the index.",
               },
             ].map((faq, i) => (
               <details key={i} className="group border border-border rounded-lg bg-background text-card-foreground [&_summary::-webkit-details-marker]:hidden">

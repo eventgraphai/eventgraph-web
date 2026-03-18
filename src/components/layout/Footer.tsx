@@ -10,13 +10,15 @@ export function Footer() {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/8 blur-[120px]" />
                 </div>
                 <div className="container mx-auto px-4 md:px-6 py-24 md:py-32 text-center relative z-10">
+                    <p className="text-sm font-medium text-primary mb-4">Early Access</p>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-5">
-                        The intelligence layer for<br className="hidden sm:block" /> prediction markets
+                        Ready to build with prediction<br className="hidden sm:block" /> market intelligence?
                     </h2>
-                    <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-10">
-                        Unified data. Cross-venue analytics. Built for traders, developers, and AI agents.
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+                        Start exploring the API today or schedule a walkthrough with our team to see how EventGraph fits your workflow.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
                         <Link
                             href="https://app.eventgraph.ai"
                             target="_blank"
@@ -26,12 +28,21 @@ export function Footer() {
                             Launch Terminal
                         </Link>
                         <Link
-                            href="/docs"
-                            className="inline-flex items-center justify-center h-12 px-8 rounded-xl border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors"
+                            href="https://calendly.com/eventgraph"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center justify-center h-12 px-8 rounded-xl border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors gap-2"
                         >
-                            Developer Docs
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>
+                            Schedule Onboarding
                         </Link>
                     </div>
+
+                    <p className="text-sm text-muted-foreground">
+                        <Link href="/docs" className="text-primary hover:underline">Read the docs</Link>
+                        {' · '}
+                        <a href="mailto:support@eventgraph.ai" className="text-primary hover:underline">support@eventgraph.ai</a>
+                    </p>
                 </div>
             </div>
 
