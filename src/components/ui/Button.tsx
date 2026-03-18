@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils'; // wait I need to create this
 
@@ -31,12 +30,10 @@ const buttonVariants = cva(
 
 export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-    asChild?: boolean;
-}
+    VariantProps<typeof buttonVariants> {}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant, size, asChild = false, ...props }, ref) => {
+    ({ className, variant, size, ...props }, ref) => {
         return (
             <button
                 className={cn(buttonVariants({ variant, size, className }))}

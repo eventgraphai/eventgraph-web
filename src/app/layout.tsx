@@ -36,12 +36,16 @@ export default function RootLayout({
           defaultTheme="system"
           disableTransitionOnChange
         >
-          <AmbientBackground />
-          <Navbar />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
+          <div className="p-3 md:p-6 min-h-screen">
+            <div className="max-w-[1600px] w-full mx-auto avax-container min-h-screen flex flex-col relative bg-background/80 backdrop-blur-sm shadow-2xl overflow-hidden">
+            <AmbientBackground />
+            <Navbar />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -1,9 +1,12 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/Card";
-import { CodeBlock } from "@/components/ui/CodeBlock";
-import { ArrowRight, BarChart3, Bot, Check, ChevronDown, Code2, Cpu, Database, LayoutDashboard, LineChart, TerminalSquare, TrendingUp, Users, Zap } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
+import { ArrowRight, BarChart3, Bot, Check, ChevronDown, Cpu, Database, LayoutDashboard, TerminalSquare } from "lucide-react";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import React from "react";
 import { TerminalTabs } from "@/components/ui/TerminalTabs";
 import { APICodeTabs } from "@/components/ui/APICodeTabs";
@@ -12,38 +15,57 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <SectionWrapper className="pt-32 pb-2 md:pt-48 md:pb-2 overflow-hidden relative">
+      <SectionWrapper className="pt-20 pb-2 md:pt-28 md:pb-2 overflow-hidden relative">
         {/* Abstract background pattern or strict geometric lines could go here */}
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,var(--primary)_0%,transparent_1px)] bg-[size:24px_24px] opacity-[0.03] -z-10 pointer-events-none" />
 
-        <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
-          <div className="inline-flex items-center rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-sm text-amber-600 dark:text-amber-400 font-medium tracking-wide">
-            <span className="flex h-2 w-2 rounded-full bg-amber-400 mr-2 animate-pulse"></span>
+        <div className="flex flex-col items-center text-center space-y-6 max-w-4xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs text-primary font-medium tracking-wide"
+          >
+            <span className="flex h-1.5 w-1.5 rounded-full bg-primary mr-2 animate-pulse"></span>
             EventGraph API v1 is now live
-          </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.15] md:leading-[1.2]">
-            The Intelligence Layer for <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-indigo-500 to-violet-500 dark:from-blue-300 dark:to-violet-400 bg-clip-text text-transparent">Global Prediction Markets</span>
-          </h1>
-          <p className="text-xl text-foreground/65 max-w-2xl leading-relaxed">
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.05]"
+          >
+            The intelligence layer for{" "}<br className="hidden md:block" />
+            <span className="text-primary">prediction markets</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-base md:text-lg text-foreground/60 max-w-2xl leading-relaxed"
+          >
             Unified prediction market data across venues — real-time prices, cross-venue intelligence, and developer APIs built for traders, developers, and AI agents.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center gap-3">
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center gap-3"
+          >
             <Link href="https://app.eventgraph.ai" target="_blank" rel="noreferrer">
-              <Button className="h-12 px-8 text-base font-semibold">
+              <Button className="h-11 px-6 text-sm font-semibold">
                 Explore Terminal
               </Button>
             </Link>
             <Link href="https://developers.eventgraph.ai/docs" target="_blank" rel="noreferrer">
-              <Button variant="outline" className="h-12 px-8 text-base font-semibold border border-foreground/20 hover:border-foreground/40 text-foreground/70 hover:text-foreground">
+              <Button variant="outline" className="h-11 px-6 text-sm font-semibold border border-foreground/20 hover:border-foreground/40 text-foreground/70 hover:text-foreground">
                 View API Docs
               </Button>
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         {/* Supported Venues — inline between CTAs and video */}
-        <div className="mt-12 w-full">
+        <div className="mt-10 w-full">
           <p className="text-center text-xs font-medium text-muted-foreground mb-6">
             Aggregating data from the world&apos;s leading prediction markets
           </p>
@@ -59,31 +81,35 @@ export default function Home() {
                 key={name}
                 src={src}
                 alt={name}
-                className="h-6 w-auto max-w-[110px] object-contain opacity-40 hover:opacity-70 transition-opacity"
-                style={{ filter: 'grayscale(100%) brightness(10)' }}
+                className="h-6 w-auto max-w-[110px] object-contain opacity-50 hover:opacity-80 transition-opacity grayscale dark:invert"
               />
             ))}
           </div>
         </div>
 
         {/* Dashboard Video Preview */}
-        <div className="mt-14 relative mx-auto max-w-5xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
+          className="mt-10 relative mx-auto max-w-5xl"
+        >
           {/* Caption */}
-          <div className="text-center mb-6">
-            <p className="text-base font-semibold text-foreground">EventGraph Terminal</p>
-            <p className="text-sm text-muted-foreground mt-1">Explore prediction markets across venues with unified data and analytics.</p>
+          <div className="text-center mb-4">
+            <p className="text-sm font-semibold text-foreground">EventGraph Terminal</p>
+            <p className="text-xs text-muted-foreground mt-1">Explore prediction markets across venues with unified data and analytics.</p>
           </div>
           {/* Glow behind the window */}
-          <div className="absolute -inset-4 rounded-2xl bg-indigo-500/10 blur-2xl pointer-events-none" />
-          <div className="relative rounded-xl border border-border bg-zinc-50 dark:bg-zinc-950 shadow-2xl overflow-hidden">
+          <div className="absolute -inset-4 rounded-3xl bg-indigo-500/10 blur-2xl pointer-events-none" />
+          <div className="relative rounded-2xl border border-border bg-zinc-50 dark:bg-zinc-950 shadow-2xl overflow-hidden group">
             {/* macOS-style title bar */}
-            <div className="flex items-center px-4 py-3 border-b border-border bg-zinc-100/80 dark:bg-zinc-900/80">
+            <div className="flex items-center px-4 py-3 border-b border-border/60 bg-zinc-100/80 dark:bg-zinc-900/80">
               <div className="flex space-x-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
               </div>
-              <div className="mx-auto bg-zinc-200 dark:bg-zinc-800 border border-black/5 dark:border-white/10 rounded text-xs text-zinc-600 dark:text-zinc-400 px-24 py-1">
+              <div className="mx-auto bg-zinc-200 dark:bg-zinc-800 border border-black/5 dark:border-white/10 rounded text-xs text-zinc-600 dark:text-zinc-400 px-24 py-1 transition-colors group-hover:bg-zinc-300 dark:group-hover:bg-zinc-700">
                 app.eventgraph.ai/terminal
               </div>
             </div>
@@ -95,15 +121,15 @@ export default function Home() {
                 muted
                 loop
                 playsInline
-                className="w-full h-auto block"
+                className="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.02]"
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </SectionWrapper>
 
       {/* Problem + How It Works — two-column */}
-      <SectionWrapper className="relative overflow-hidden border-y border-border">
+      <SectionWrapper className="relative overflow-hidden border-y border-border/60 min-h-screen flex items-center">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-primary/5 via-blue-500/3 to-transparent" />
         </div>
@@ -217,75 +243,99 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      {/* Gradient divider */}
-      <div className="w-full px-8 md:px-32">
-        <div className="h-px bg-gradient-to-r from-transparent via-indigo-500/25 to-transparent" />
-      </div>
-
       {/* Pillars Section */}
-      <SectionWrapper>
+      <SectionWrapper className="min-h-screen flex items-center">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-5">Everything you need to build on prediction markets</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">One platform for normalized data, cross-venue intelligence, and developer tooling across major prediction markets.</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 max-w-3xl mx-auto">
-              <div className="space-y-1">
-                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-primary to-cyan-400 bg-clip-text text-transparent">8,000+</p>
-                <p className="text-xs text-muted-foreground">Events tracked</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-indigo-400 to-indigo-600 dark:from-indigo-300 dark:to-indigo-500 bg-clip-text text-transparent">20,000+</p>
-                <p className="text-xs text-muted-foreground">Markets indexed</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-amber-400 to-orange-400 dark:from-amber-300 dark:to-yellow-400 bg-clip-text text-transparent">$7B+</p>
-                <p className="text-xs text-muted-foreground">Historical trading volume</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-violet-400 to-purple-500 dark:from-violet-300 dark:to-violet-500 bg-clip-text text-transparent">4+</p>
-                <p className="text-xs text-muted-foreground">Venues integrated</p>
-              </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border/50 border border-border rounded-2xl overflow-hidden mt-12 max-w-4xl mx-auto">
+              {[
+                { val: "8,000+", label: "Events tracked", colors: "from-primary to-cyan-400" },
+                { val: "20,000+", label: "Markets indexed", colors: "from-indigo-400 to-indigo-600 dark:from-indigo-300 dark:to-indigo-500" },
+                { val: "$7B+", label: "Historical volume", colors: "from-amber-400 to-orange-400 dark:from-amber-300 dark:to-yellow-400" },
+                { val: "4+", label: "Venues integrated", colors: "from-violet-400 to-purple-500 dark:from-violet-300 dark:to-violet-500" }
+              ].map((stat, i) => (
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: i * 0.1, duration: 0.4 }}
+                  className="space-y-1 bg-card p-8 flex flex-col justify-center items-center text-center hover:bg-muted/30 transition-colors"
+                >
+                  <p className={`text-3xl md:text-4xl font-bold bg-gradient-to-br ${stat.colors} bg-clip-text text-transparent`}>{stat.val}</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider mt-2">{stat.label}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-start p-10 rounded-2xl border border-border border-t-2 border-t-blue-500/50 bg-card hover:bg-white/[0.03] hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-200 group">
-              <div className="p-4 bg-blue-500/15 rounded-xl mb-7 text-blue-400 group-hover:bg-blue-500/25 group-hover:scale-110 transition-all duration-200 shadow-lg shadow-blue-500/5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/50 border border-border rounded-2xl overflow-hidden mt-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.1 }}
+              className="flex flex-col items-start p-10 bg-card hover:bg-muted/50 transition-colors duration-200 group relative"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500/50 to-transparent"></div>
+              <div className="p-4 bg-blue-500/10 rounded-xl mb-7 text-blue-500 group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-200">
                 <Database className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Market Data</h3>
+              <h3 className="text-2xl font-bold mb-4">Market Data</h3>
               <p className="text-muted-foreground leading-relaxed flex-1">
                 Unified prediction market data — events, markets, prices, trades, and liquidity across venues via a normalized schema.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col items-start p-10 rounded-2xl border border-border border-t-2 border-t-violet-500/50 bg-card hover:bg-white/[0.03] hover:shadow-xl hover:shadow-violet-500/5 hover:border-violet-500/30 hover:-translate-y-1 transition-all duration-200 group">
-              <div className="p-4 bg-violet-500/15 rounded-xl mb-7 text-violet-400 group-hover:bg-violet-500/25 group-hover:scale-110 transition-all duration-200 shadow-lg shadow-violet-500/5">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col items-start p-10 bg-card hover:bg-muted/50 transition-colors duration-200 group relative"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500/50 to-transparent"></div>
+              <div className="p-4 bg-violet-500/10 rounded-xl mb-7 text-violet-500 group-hover:bg-violet-500/20 group-hover:scale-110 transition-all duration-200">
                 <BarChart3 className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Market Intelligence</h3>
+              <h3 className="text-2xl font-bold mb-4">Market Intelligence</h3>
               <p className="text-muted-foreground leading-relaxed flex-1">
                 Cross-venue intelligence for prediction markets — compare prices, detect arbitrage opportunities, and analyze probability consensus across venues.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col items-start p-10 rounded-2xl border border-border border-t-2 border-t-emerald-500/50 bg-card hover:bg-white/[0.03] hover:shadow-xl hover:shadow-emerald-500/5 hover:border-emerald-500/30 hover:-translate-y-1 transition-all duration-200 group">
-              <div className="p-4 bg-emerald-500/15 rounded-xl mb-7 text-emerald-400 group-hover:bg-emerald-500/25 group-hover:scale-110 transition-all duration-200 shadow-lg shadow-emerald-500/5">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col items-start p-10 bg-card hover:bg-muted/50 transition-colors duration-200 group relative"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500/50 to-transparent"></div>
+              <div className="p-4 bg-emerald-500/10 rounded-xl mb-7 text-emerald-500 group-hover:bg-emerald-500/20 group-hover:scale-110 transition-all duration-200">
                 <Cpu className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Developer & AI Platform</h3>
+              <h3 className="text-2xl font-bold mb-4">Developer & AI Platform</h3>
               <p className="text-muted-foreground leading-relaxed flex-1">
                 Developer-first APIs and structured datasets with MCP support, enabling developers and AI agents to build on prediction market intelligence.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </SectionWrapper>
 
       {/* Terminal Preview Section */}
-      <SectionWrapper className="border-y border-border">
+      <SectionWrapper className="border-y border-border/60 min-h-screen flex items-center">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           {/* Left — Copy */}
-          <div className="space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
             <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
               Terminal
             </div>
@@ -319,20 +369,39 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right — Tabbed product preview */}
-          <TerminalTabs />
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <TerminalTabs />
+          </motion.div>
         </div>
       </SectionWrapper>
 
       {/* API Platform Section */}
-      <SectionWrapper>
+      <SectionWrapper className="min-h-screen flex items-center">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="order-2 md:order-1"
+          >
             <APICodeTabs />
-          </div>
-          <div className="space-y-6 order-1 md:order-2">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-6 order-1 md:order-2"
+          >
             <div className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-sm text-secondary-foreground font-medium">
               <TerminalSquare className="w-4 h-4 mr-2" />
               Developer APIs
@@ -358,11 +427,11 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="grid sm:grid-cols-2 gap-4 pt-2 pb-2">
-              <div className="flex items-center text-sm font-medium"><Database className="w-4 h-4 mr-2 text-primary" /> Unified REST endpoints</div>
-              <div className="flex items-center text-sm font-medium"><Database className="w-4 h-4 mr-2 text-primary" /> Normalized event schemas</div>
-              <div className="flex items-center text-sm font-medium"><Database className="w-4 h-4 mr-2 text-primary" /> Cross-venue market queries</div>
-              <div className="flex items-center text-sm font-medium"><Database className="w-4 h-4 mr-2 text-primary" /> Arbitrage detection endpoints</div>
+            <div className="grid sm:grid-cols-2 gap-px bg-border/50 border border-border rounded-xl overflow-hidden mt-6 mb-6">
+              <div className="flex items-center text-sm font-medium bg-card p-3"><Database className="w-4 h-4 mr-2 text-primary" /> Unified REST endpoints</div>
+              <div className="flex items-center text-sm font-medium bg-card p-3"><Database className="w-4 h-4 mr-2 text-primary" /> Normalized event schemas</div>
+              <div className="flex items-center text-sm font-medium bg-card p-3"><Database className="w-4 h-4 mr-2 text-primary" /> Cross-venue queries</div>
+              <div className="flex items-center text-sm font-medium bg-card p-3"><Database className="w-4 h-4 mr-2 text-primary" /> Arbitrage detection</div>
             </div>
             <div className="flex flex-wrap gap-4 pt-2">
               <Link href="https://developers.eventgraph.ai" target="_blank" rel="noreferrer">
@@ -372,15 +441,21 @@ export default function Home() {
                 <Button variant="outline">Get API Key</Button>
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </SectionWrapper>
 
       {/* AI Agents & MCP Section */}
-      <SectionWrapper className="relative overflow-hidden border-y border-border">
+      <SectionWrapper className="relative overflow-hidden border-y border-border/60 min-h-screen flex items-center">
 
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-14 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto text-center space-y-4 mb-14 relative z-10"
+        >
           <div className="inline-flex items-center rounded-full bg-primary/20 text-primary px-3 py-1 text-sm font-medium">
             <Bot className="w-4 h-4 mr-2" />
             AI Native Infrastructure
@@ -392,13 +467,19 @@ export default function Home() {
           <p className="text-sm text-muted-foreground/70 leading-relaxed max-w-2xl mx-auto">
             AI agents can use EventGraph to analyze prediction markets, detect arbitrage opportunities, and summarize probability consensus across venues.
           </p>
-        </div>
+        </motion.div>
 
         {/* Architecture diagram + functions side by side */}
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start relative z-10">
 
           {/* Architecture diagram */}
-          <div className="flex flex-col items-center gap-0 select-none">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col items-center gap-0 select-none"
+          >
             {/* AI Agent tier */}
             <div className="flex items-center justify-center gap-2 flex-wrap w-full">
               {['OpenAI', 'Claude', 'LangChain', 'Cursor'].map((name) => (
@@ -413,7 +494,7 @@ export default function Home() {
               <div className="w-px h-5 bg-indigo-500/30" />
             </div>
             {/* EventGraph MCP tier */}
-            <div className="w-full rounded-xl border border-indigo-200 dark:border-indigo-500/40 bg-indigo-50/80 dark:bg-indigo-950/60 px-6 py-5 text-center backdrop-blur-sm shadow-[0_0_32px_-8px_rgba(99,102,241,0.2)] dark:shadow-[0_0_32px_-8px_rgba(99,102,241,0.4)]">
+            <div className="w-full rounded-xl border border-indigo-200 dark:border-indigo-500/40 bg-indigo-50/80 dark:bg-indigo-950/60 px-6 py-5 text-center backdrop-blur-sm shadow-[0_0_32px_-8px_rgba(99,102,241,0.2)] dark:shadow-[0_0_32px_-8px_rgba(99,102,241,0.4)] transition-transform hover:scale-105 duration-300">
               <p className="text-[10px] uppercase tracking-widest text-indigo-500 dark:text-indigo-400/60 font-semibold mb-1">EventGraph</p>
               <p className="text-base font-bold text-indigo-900 dark:text-indigo-200">MCP + Data Engine</p>
               <p className="text-xs text-indigo-600 dark:text-indigo-400/70 mt-1">Normalization · Intelligence · Arbitrage</p>
@@ -432,10 +513,16 @@ export default function Home() {
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Functions + ecosystem */}
-          <div className="space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="space-y-6"
+          >
             <div>
               <p className="text-xs text-muted-foreground/50 uppercase tracking-widest font-semibold mb-3">MCP Functions</p>
               <div className="flex flex-col gap-2">
@@ -445,7 +532,7 @@ export default function Home() {
                   'eventgraph.detect_arbitrage()',
                   'eventgraph.get_consensus_probability()',
                 ].map(fn => (
-                  <div key={fn} className="flex items-center gap-3 rounded-lg border border-indigo-200 dark:border-indigo-500/20 bg-white/50 dark:bg-zinc-950/80 px-4 py-3 font-mono text-sm text-indigo-700 dark:text-indigo-300 backdrop-blur-sm shadow-sm">
+                  <div key={fn} className="flex items-center gap-3 rounded-lg border border-indigo-200 dark:border-indigo-500/20 bg-white/50 dark:bg-zinc-950/80 px-4 py-3 font-mono text-sm text-indigo-700 dark:text-indigo-300 backdrop-blur-sm shadow-sm hover:border-indigo-400 dark:hover:border-indigo-500/50 transition-colors">
                     <span className="text-indigo-400 dark:text-indigo-500/50">›</span>
                     {fn}
                   </div>
@@ -465,7 +552,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className="mt-12 text-center relative z-10">
@@ -480,59 +567,80 @@ export default function Home() {
 
 
       {/* Pricing Preview Section */}
-      <SectionWrapper>
+      <SectionWrapper className="min-h-screen flex items-center">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Simple, transparent pricing</h2>
           <p className="text-lg text-muted-foreground">Start building for free, scale when you need it.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
-          <Card className="flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-2xl">Free</CardTitle>
-              <div className="text-4xl font-bold mt-4 mb-2">$0</div>
-              <CardDescription>Good for testing</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2" /> 100K API calls / month</li>
-                <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2" /> Basic endpoints</li>
-              </ul>
-            </CardContent>
-          </Card>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card className="flex flex-col h-full hover:border-primary/50 transition-colors">
+              <CardHeader>
+                <CardTitle className="text-2xl">Free</CardTitle>
+                <div className="text-4xl font-bold mt-4 mb-2">$0</div>
+                <CardDescription>Good for testing</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1">
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2" /> 100K API calls / month</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-emerald-500 mr-2" /> Basic endpoints</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card className="flex flex-col border-amber-400/50 dark:border-amber-400/30 relative transform md:-translate-y-4 shadow-xl shadow-amber-500/10">
-            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 rounded-t-xl" />
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-2xl">Pro</CardTitle>
-                <span className="text-xs bg-amber-400/15 text-amber-600 dark:text-amber-400 px-2 py-1 rounded-full font-semibold border border-amber-400/30">Most Popular</span>
-              </div>
-              <div className="text-4xl font-bold mt-4 mb-2">$29<span className="text-lg text-muted-foreground font-normal">/mo</span></div>
-              <CardDescription>Good for bots and apps</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2" /> 1M API calls / month</li>
-                <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2" /> Cross-venue analytics</li>
-                <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2" /> Arbitrage & Probabilities</li>
-              </ul>
-            </CardContent>
-          </Card>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <Card className="flex flex-col h-full border-amber-400/50 dark:border-amber-400/30 relative transform md:-translate-y-4 shadow-xl shadow-amber-500/10 hover:shadow-amber-500/20 transition-all">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 rounded-t-xl" />
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-2xl">Pro</CardTitle>
+                  <span className="text-xs bg-amber-400/15 text-amber-600 dark:text-amber-400 px-2 py-1 rounded-full font-semibold border border-amber-400/30">Most Popular</span>
+                </div>
+                <div className="text-4xl font-bold mt-4 mb-2">$29<span className="text-lg text-muted-foreground font-normal">/mo</span></div>
+                <CardDescription>Good for bots and apps</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1">
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2" /> 1M API calls / month</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2" /> Cross-venue analytics</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-primary mr-2" /> Arbitrage & Probabilities</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-          <Card className="flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-2xl">Enterprise</CardTitle>
-              <div className="text-4xl font-bold mt-4 mb-2">Custom</div>
-              <CardDescription>Advanced access & streaming</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2" /> 10M+ calls</li>
-                <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2" /> Historical datasets</li>
-                <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2" /> Streaming / WebSocket</li>
-              </ul>
-            </CardContent>
-          </Card>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Card className="flex flex-col h-full hover:border-border/80 transition-colors">
+              <CardHeader>
+                <CardTitle className="text-2xl">Enterprise</CardTitle>
+                <div className="text-4xl font-bold mt-4 mb-2">Custom</div>
+                <CardDescription>Advanced access & streaming</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1">
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2" /> 10M+ calls</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2" /> Historical datasets</li>
+                  <li className="flex items-center"><Check className="w-4 h-4 text-muted-foreground mr-2" /> Streaming / WebSocket</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
         <div className="mt-12 text-center">
           <Link href="/pricing">
@@ -558,25 +666,34 @@ export default function Home() {
               { slug: "polymarket-vs-kalshi-liquidity-analysis", title: "Polymarket vs Kalshi: A Deep Dive into Liquidity", category: "Market Analysis", date: "Mar 4, 2026", readTime: "8 min" },
               { slug: "building-ai-agents-on-prediction-markets", title: "Building AI Agents That Trade Prediction Markets Using MCP", category: "Developer", date: "Feb 28, 2026", readTime: "12 min" },
               { slug: "arbitrage-opportunities-in-election-markets", title: "Arbitrage in Election Markets: Patterns, Risks, and Returns", category: "Trading Strategy", date: "Feb 20, 2026", readTime: "10 min" },
-            ].map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`}>
-                <div className="group flex flex-col h-full border border-border rounded-xl p-6 bg-card hover:border-primary/50 transition-colors">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">{post.category}</span>
-                  <h3 className="font-semibold text-base leading-snug group-hover:text-primary transition-colors flex-1">{post.title}</h3>
-                  <div className="flex items-center gap-3 mt-4 text-xs text-muted-foreground">
-                    <span>{post.date}</span>
-                    <span>·</span>
-                    <span>{post.readTime} read</span>
+            ].map((post, i) => (
+              <motion.div
+                key={post.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="h-full"
+              >
+                <Link href={`/blog/${post.slug}`} className="block h-full">
+                  <div className="group flex flex-col h-full border border-border rounded-xl p-6 bg-card hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">{post.category}</span>
+                    <h3 className="font-semibold text-base leading-snug group-hover:text-primary transition-colors flex-1">{post.title}</h3>
+                    <div className="flex items-center gap-3 mt-4 text-xs text-muted-foreground">
+                      <span>{post.date}</span>
+                      <span>·</span>
+                      <span>{post.readTime} read</span>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
       </SectionWrapper>
 
       {/* FAQ Section */}
-      <SectionWrapper className="border-t border-border">
+      <SectionWrapper className="border-t border-border/60">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Frequently asked questions</h2>
           <div className="space-y-4">

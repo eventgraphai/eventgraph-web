@@ -49,7 +49,7 @@ export default function AiPage() {
                             Whether you are building an automated trading bot, an intelligence aggregator, or a specialized forecasting assistant, EventGraph provides the tooling required to reason about the future.
                         </p>
                     </div>
-                    <div className="bg-background border border-border rounded-xl p-8 relative overflow-hidden shadow-sm">
+                    <div className="bg-background border border-border rounded-2xl p-8 relative overflow-hidden shadow-sm">
                         {/* Visual connecting LLM to Tools */}
                         <div className="flex flex-col space-y-8">
                             <div className="flex justify-center">
@@ -76,7 +76,7 @@ export default function AiPage() {
                 </div>
             </SectionWrapper>
 
-           <SectionWrapper className="border-t border-border">
+           <SectionWrapper className="border-t border-border/60">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold tracking-tight mb-4">Example Use Cases</h2>
@@ -100,7 +100,7 @@ export default function AiPage() {
                                 <CardTitle>Arbitrage Monitoring</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-muted-foreground text-sm">Background agents that poll `get_arbitrage` tool and automatically execute trades across connected exchange wallets when spreads widen.</p>
+                                <p className="text-muted-foreground text-sm">Background agents that poll &apos;get_arbitrage&apos; tool and automatically execute trades across connected exchange wallets when spreads widen.</p>
                             </CardContent>
                         </Card>
 
@@ -110,7 +110,7 @@ export default function AiPage() {
                                 <CardTitle>Trading Workflow Assistant</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-muted-foreground text-sm">A personal chatbot that allows you to ask "What is the Polymarket edge on the Fed rate cut vs Kalshi?" in natural language.</p>
+                                <p className="text-muted-foreground text-sm">A personal chatbot that allows you to ask &quot;What is the Polymarket edge on the Fed rate cut vs Kalshi?&quot; in natural language.</p>
                             </CardContent>
                         </Card>
                     </div>

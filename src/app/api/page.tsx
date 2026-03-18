@@ -39,7 +39,7 @@ export default function ApiPage() {
                 </div>
             </SectionWrapper>
 
-           <SectionWrapper className="border-y border-border">
+           <SectionWrapper className="border-y border-border/60">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl font-bold tracking-tight">Normalized Data Layer</h2>
@@ -76,7 +76,7 @@ export default function ApiPage() {
                             </li>
                         </ul>
                     </div>
-                    <div className="bg-background rounded-xl p-2 border border-border shadow-sm">
+                    <div className="bg-background rounded-2xl p-2 border border-border shadow-sm">
                         <CodeBlock
                             language="json"
                             code={`// GET /v1/events/president-2028/cross-venue

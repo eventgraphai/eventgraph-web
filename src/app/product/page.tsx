@@ -1,7 +1,6 @@
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { ArrowRight, Activity, Globe, Zap, Cpu, ScanSearch, LineChart } from "lucide-react";
+import { ArrowRight, Globe, Zap, ScanSearch } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
@@ -12,7 +11,7 @@ export const metadata = {
 export default function ProductPage() {
     return (
         <>
-           <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 border-b border-border relative overflow-hidden">
+           <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 border-b border-border/60 relative overflow-hidden">
                 <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight">The Core Platform</h1>
                     <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -38,7 +37,7 @@ export default function ProductPage() {
                                 <li className="flex items-center text-sm font-medium"><Zap className="w-4 h-4 mr-2 text-primary" /> Venue-agnostic identifiers</li>
                             </ul>
                         </div>
-                        <div className="h-80 bg-background rounded-xl border border-border p-6 relative overflow-hidden shadow-sm">
+                        <div className="h-80 bg-background rounded-2xl border border-border p-6 relative overflow-hidden shadow-sm">
                             {/* Abstract visual of data merging */}
                             <div className="flex flex-col h-full justify-center space-y-4">
                                 <div className="flex justify-between items-center px-4">
@@ -61,13 +60,13 @@ export default function ProductPage() {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className="order-2 md:order-1 h-80 bg-background shadow-sm rounded-xl border border-border p-6 flex items-center justify-center">
+                        <div className="order-2 md:order-1 h-80 bg-background shadow-sm rounded-2xl border border-border p-6 flex items-center justify-center">
                             <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
-                                <div className="bg-background/80 border border-border p-4 rounded-lg text-center space-y-2">
+                                <div className="bg-background/80 border border-border p-4 rounded-xl text-center space-y-2">
                                     <div className="text-xs text-muted-foreground">Polymarket Yes</div>
                                     <div className="text-lg font-mono font-bold text-green-500">42¢</div>
                                 </div>
-                                <div className="bg-background/80 border border-border p-4 rounded-lg text-center space-y-2 ring-1 ring-primary/50 relative">
+                                <div className="bg-background/80 border border-border p-4 rounded-xl text-center space-y-2 ring-1 ring-primary/50 relative">
                                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Arb</div>
                                     <div className="text-xs text-muted-foreground">Kalshi No</div>
                                     <div className="text-lg font-mono font-bold text-green-500">60¢</div>

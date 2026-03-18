@@ -21,8 +21,13 @@ if [ ! -d "node_modules" ]; then
   npm install
 fi
 
-# Start in a new process group (setsid) so stop.sh can kill all child processes
-setsid npm run dev > nextjs.log 2>&1 &
+# Start in a new process group so stop.sh can kill all child processes
+if command -v setsid >/dev/null 2>&1; then
+  setsid npm run dev > nextjs.log 2>&1 &
+else
+  # MacOS doesn't have setsid by default, use perl fallback
+  perl -MPOSIX -e 'POSIX::setsid(); exec(@ARGV)' npm run dev > nextjs.log 2>&1 &
+fi
 PID=$!
 echo $PID > nextjs.pid
 

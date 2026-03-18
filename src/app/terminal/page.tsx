@@ -38,11 +38,11 @@ export default function TerminalPage() {
                 </div>
             </SectionWrapper>
 
-           <SectionWrapper className="border-t border-border">
+           <SectionWrapper className="border-t border-border/60">
                 <div className="max-w-6xl mx-auto">
                     {/* Main big dashboard mock */}
-                    <div className="rounded-xl border border-border bg-background shadow-lg overflow-hidden mb-20 relative">
-                        <div className="flex items-center px-4 py-3 border-b border-border bg-muted/20">
+                    <div className="rounded-2xl border border-border bg-background shadow-lg overflow-hidden mb-20 relative">
+                        <div className="flex items-center px-4 py-3 border-b border-border/60 bg-muted/20">
                             <div className="flex space-x-2">
                                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>

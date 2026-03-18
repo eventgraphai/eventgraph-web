@@ -62,7 +62,7 @@ export function APICodeTabs() {
   const tab = tabs[active];
 
   return (
-    <div className="rounded-xl border border-zinc-200 dark:border-zinc-700/50 bg-zinc-50 dark:bg-zinc-950 shadow-[0_0_48px_-6px_rgba(99,102,241,0.1)] dark:shadow-[0_0_48px_-6px_rgba(99,102,241,0.35)] ring-1 ring-indigo-500/10 dark:ring-indigo-500/20 overflow-hidden">
+    <div className="rounded-2xl border border-zinc-200 dark:border-zinc-700/50 bg-zinc-50 dark:bg-zinc-950 shadow-[0_0_48px_-6px_rgba(99,102,241,0.1)] dark:shadow-[0_0_48px_-6px_rgba(99,102,241,0.35)] ring-1 ring-indigo-500/10 dark:ring-indigo-500/20 overflow-hidden">
       {/* Language tab bar */}
       <div className="flex items-center gap-1 border-b border-zinc-200 dark:border-zinc-800 px-4 py-2.5">
         {tabs.map((t, i) => (

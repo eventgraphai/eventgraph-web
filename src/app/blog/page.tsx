@@ -86,7 +86,7 @@ export default function BlogPage() {
     return (
         <>
             {/* Hero */}
-           <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 border-b border-border">
+           <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-20 border-b border-border/60">
                 <div className="max-w-4xl mx-auto text-center space-y-4">
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">Blog &amp; Insights</h1>
                     <p className="text-xl text-muted-foreground">
@@ -144,7 +144,7 @@ export default function BlogPage() {
                             <Link key={post.slug} href={`/blog/${post.slug}`}>
                                 <Card className="group flex flex-col h-full hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                                     {/* Mini visual strip */}
-                                    <div className="h-2 w-full rounded-t-xl bg-gradient-to-r from-primary/20 via-blue-500/20 to-violet-500/20" />
+                                    <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-blue-500/20 to-violet-500/20" />
                                     <CardHeader>
                                         <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full w-fit mb-2 ${categoryColors[post.category]}`}>
                                             <Tag className="w-3 h-3" />

@@ -100,9 +100,9 @@ export function TerminalTabs() {
       </div>
 
       {/* Screenshot area */}
-      <div className="rounded-xl border border-border bg-background overflow-hidden shadow-lg">
+      <div className="rounded-2xl border border-border bg-background overflow-hidden shadow-lg">
         {/* Title bar */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-zinc-100/80 dark:bg-zinc-950/50">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-border/60 bg-zinc-100/80 dark:bg-zinc-950/50">
           <div className="flex items-center gap-3">
             <div className="flex space-x-1.5">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500/70"></div>
@@ -115,7 +115,7 @@ export function TerminalTabs() {
         </div>
 
         {/* Description */}
-        <div className="px-5 py-3 border-b border-border/50">
+        <div className="px-5 py-3 border-b border-border/40">
           <p className="text-xs text-muted-foreground">{tab.desc}</p>
         </div>
 

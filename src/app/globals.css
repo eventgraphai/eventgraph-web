@@ -61,114 +61,127 @@
 
 @layer base {
   /* ═══════════════════════════════════════
-     LIGHT THEME
-     Crisp white base, icy-blue tint surfaces
+     LIGHT THEME — Refined & Production-Grade
+     Clean white, deep navy text, polished cyan
   ═══════════════════════════════════════ */
   :root {
-    /* surfaces — 3 tiers */
-    --background:        0 0% 100%;          /* Pure white page */
-    --background-subtle: 210 20% 98%;        /* Barely-there blue tint */
-    --surface:           210 18% 96%;        /* Cards, panels */
-    --surface-raised:    210 15% 93%;        /* Nested cards, tooltips */
+    /* surfaces — soft blue-white hierarchy */
+    --background:        210 40% 96%;
+    --background-subtle: 210 36% 93%;
+    --surface:           210 30% 91%;
+    --surface-raised:    210 26% 89%;
 
-    --foreground:        213 22% 12%;        /* Near-black body text */
-    --card:              0 0% 100%;
-    --card-foreground:   213 22% 12%;
-    --popover:           0 0% 100%;
-    --popover-foreground:213 22% 12%;
+    --foreground:        222 47% 11%;        /* Deep navy — softer than pure black */
+    --card:              210 35% 97%;
+    --card-foreground:   222 47% 11%;
+    --popover:           210 35% 97%;
+    --popover-foreground:222 47% 11%;
 
-    /* Accent 1 — Cyan/Teal */
-    --primary:           190 95% 36%;
+    /* Accent 1 — Polished Cyan/Teal */
+    --primary:           183 80% 35%;
     --primary-foreground:0 0% 100%;
 
     /* Accent 2 — Indigo */
-    --indigo:            241 70% 58%;
-    --indigo-subtle:     241 80% 96%;
-    --indigo-foreground: 241 70% 35%;
+    --indigo:            243 75% 59%;
+    --indigo-subtle:     243 75% 96%;
+    --indigo-foreground: 0 0% 100%;
 
     /* Accent 3 — Violet */
-    --violet:            265 70% 58%;
-    --violet-subtle:     265 80% 96%;
-    --violet-foreground: 265 65% 38%;
+    --violet:            271 76% 53%;
+    --violet-subtle:     271 76% 96%;
+    --violet-foreground: 0 0% 100%;
 
-    /* Accent 4 — Amber */
-    --amber:             38 95% 48%;
-    --amber-subtle:      40 100% 94%;
-    --amber-foreground:  36 80% 30%;
+    /* Accent 4 — Amber/Gold */
+    --amber:             38 92% 50%;
+    --amber-subtle:      38 92% 93%;
+    --amber-foreground:  38 92% 10%;
 
     /* Accent 5 — Emerald */
-    --emerald:           158 64% 42%;
-    --emerald-subtle:    158 60% 94%;
+    --emerald:           160 84% 39%;
+    --emerald-subtle:    160 84% 93%;
 
     /* UI chrome */
-    --secondary:         210 20% 95%;
-    --secondary-foreground:213 22% 20%;
-    --muted:             210 18% 94%;
-    --muted-foreground:  213 12% 44%;
-    --accent:            210 18% 94%;
-    --accent-foreground: 213 22% 12%;
+    --secondary:         220 14% 96%;
+    --secondary-foreground:222 47% 11%;
+    --muted:             220 14% 96%;
+    --muted-foreground:  220 9% 46%;
+    --accent:            220 14% 96%;
+    --accent-foreground: 222 47% 11%;
     --destructive:       0 84% 60%;
     --destructive-foreground:0 0% 100%;
-    --border:            216 14% 88%;
-    --border-strong:     216 14% 78%;
-    --input:             216 14% 88%;
-    --ring:              190 95% 36%;
-    --radius:            0.75rem;
+    --border:            220 13% 91%;         /* Subtle gray borders */
+    --border-strong:     220 13% 80%;
+    --input:             220 13% 91%;
+    --ring:              183 80% 35%;
+    --radius:            0.75rem;             /* 12px — modern rounded corners */
   }
 
   /* ═══════════════════════════════════════
-     DARK THEME
-     Deep charcoal base, richer accent palette
+     DARK THEME — Sophisticated & Deep
+     Rich dark navy, soft edges, luminous cyan
   ═══════════════════════════════════════ */
   .dark {
-    /* surfaces — 3 tiers */
-    --background:        210 26% 7%;         /* Deep charcoal (#0b0f17) */
-    --background-subtle: 215 24% 10%;        /* Second level (#111827) */
-    --surface:           215 22% 13%;        /* Cards, panels (#161d2b) */
-    --surface-raised:    215 20% 17%;        /* Nested cards, tooltips (#1d2636) */
+    /* surfaces — layered depth */
+    --background:        224 71% 4%;
+    --background-subtle: 225 30% 7%;
+    --surface:           225 25% 10%;
+    --surface-raised:    225 20% 13%;
 
-    --foreground:        210 14% 95%;        /* Near-white text */
-    --card:              215 22% 13%;
-    --card-foreground:   210 14% 95%;
-    --popover:           215 22% 13%;
-    --popover-foreground:210 14% 95%;
+    --foreground:        210 40% 98%;        /* Near-white with warmth */
+    --card:              225 30% 7%;
+    --card-foreground:   210 40% 98%;
+    --popover:           225 30% 7%;
+    --popover-foreground:210 40% 98%;
 
-    /* Accent 1 — Cyan/Teal */
-    --primary:           190 90% 50%;
-    --primary-foreground:210 26% 7%;
+    /* Accent 1 — Luminous Cyan */
+    --primary:           183 90% 48%;
+    --primary-foreground:224 71% 4%;
 
-    /* Accent 2 — Indigo (brighter in dark) */
-    --indigo:            243 75% 68%;
-    --indigo-subtle:     243 50% 14%;
-    --indigo-foreground: 243 80% 80%;
+    /* Accent 2 — Indigo */
+    --indigo:            243 75% 65%;
+    --indigo-subtle:     243 50% 12%;
+    --indigo-foreground: 0 0% 100%;
 
-    /* Accent 3 — Violet (brighter in dark) */
-    --violet:            268 72% 68%;
-    --violet-subtle:     268 40% 13%;
-    --violet-foreground: 268 80% 82%;
+    /* Accent 3 — Violet */
+    --violet:            271 76% 65%;
+    --violet-subtle:     271 50% 12%;
+    --violet-foreground: 0 0% 100%;
 
-    /* Accent 4 — Amber (warm gold in dark) */
-    --amber:             38 92% 58%;
+    /* Accent 4 — Amber/Gold */
+    --amber:             38 92% 50%;
     --amber-subtle:      38 50% 12%;
-    --amber-foreground:  40 95% 72%;
+    --amber-foreground:  38 92% 10%;
 
     /* Accent 5 — Emerald */
-    --emerald:           158 60% 48%;
-    --emerald-subtle:    158 40% 10%;
+    --emerald:           160 84% 45%;
+    --emerald-subtle:    160 50% 12%;
 
     /* UI chrome */
-    --secondary:         215 20% 16%;
-    --secondary-foreground:210 14% 90%;
-    --muted:             215 20% 15%;
-    --muted-foreground:  213 10% 56%;
-    --accent:            215 20% 16%;
-    --accent-foreground: 210 14% 95%;
-    --destructive:       0 62% 36%;
+    --secondary:         225 20% 12%;
+    --secondary-foreground:210 40% 98%;
+    --muted:             225 20% 12%;
+    --muted-foreground:  218 11% 55%;
+    --accent:            225 20% 12%;
+    --accent-foreground: 210 40% 98%;
+    --destructive:       0 63% 55%;
     --destructive-foreground:0 0% 100%;
-    --border:            215 16% 20%;
-    --border-strong:     215 16% 28%;
-    --input:             215 16% 20%;
-    --ring:              190 90% 50%;
+    --border:            220 15% 18%;         /* Subtle dark borders */
+    --border-strong:     220 15% 28%;
+    --input:             220 15% 18%;
+    --ring:              183 90% 48%;
+  }
+
+  /* Uniform Rounded Card & Container Utility Classes */
+  .avax-card {
+    @apply rounded-2xl border border-border transition-colors;
+  }
+  
+  .avax-card-reverse {
+    @apply rounded-2xl border border-border transition-colors;
+  }
+
+  .avax-container {
+    @apply rounded-3xl border border-border;
   }
 }
 
@@ -179,7 +192,7 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary transition-colors duration-300;
+    @apply bg-background-subtle text-foreground antialiased selection:bg-primary/20 selection:text-primary transition-colors duration-300;
   }
 }
 

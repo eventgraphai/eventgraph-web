@@ -62,7 +62,7 @@ export default function PricingPage() {
 
     return (
         <>
-           <SectionWrapper className="pt-28 pb-10 md:pt-36 md:pb-12 border-b border-border">
+           <SectionWrapper className="pt-28 pb-10 md:pt-36 md:pb-12 border-b border-border/60">
                 <div className="max-w-4xl mx-auto text-center space-y-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-2">Transparent Pricing</p>
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">Flexible plans for any scale</h1>
@@ -92,8 +92,8 @@ export default function PricingPage() {
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto relative items-start">
                     {plans.map((plan) =>
                         plan.popular ? (
-                            <div key={plan.name} className="relative p-[2px] rounded-xl bg-gradient-to-b from-amber-400 via-orange-400 to-amber-500 transform md:-translate-y-4 z-10 shadow-xl shadow-amber-500/20">
-                                <Card className="flex flex-col h-full bg-card rounded-[10px]">
+                            <div key={plan.name} className="relative p-[2px] rounded-2xl bg-gradient-to-b from-amber-400 via-orange-400 to-amber-500 transform md:-translate-y-4 z-10 shadow-xl shadow-amber-500/20">
+                                <Card className="flex flex-col h-full bg-card rounded-[calc(1rem-2px)]">
                                     <CardHeader>
                                         <div className="flex items-center justify-between">
                                             <CardTitle className="text-2xl">{plan.name}</CardTitle>
@@ -162,7 +162,7 @@ export default function PricingPage() {
                     )}
                 </div>
 
-                <div className="max-w-3xl mx-auto text-center mt-20 pt-12 border-t border-border">
+                <div className="max-w-3xl mx-auto text-center mt-20 pt-12 border-t border-border/60">
                     <h3 className="text-lg font-medium text-foreground mb-2">Need custom limits or dedicated infrastructure?</h3>
                     <p className="text-muted-foreground mb-6">Our enterprise plan is tailored for high-frequency trading firms and large-scale AI applications.</p>
                     <Link href="/contact">

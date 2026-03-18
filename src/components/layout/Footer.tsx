@@ -4,7 +4,7 @@ export function Footer() {
     return (
         <footer>
             {/* Pre-footer CTA Band */}
-            <div className="relative overflow-hidden border-t border-border">
+            <div className="relative overflow-hidden border-t border-border/60">
                 <div className="container mx-auto px-4 md:px-6 py-20 md:py-24 text-center relative z-10">
                     <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Get Started Today</p>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
@@ -18,13 +18,13 @@ export function Footer() {
                             href="https://developers.eventgraph.ai"
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
+                            className="inline-flex items-center justify-center h-12 px-8 rounded-xl bg-foreground text-background font-semibold text-sm hover:opacity-90 transition-opacity"
                         >
                             Start for Free →
                         </Link>
                         <Link
                             href="/docs"
-                            className="inline-flex items-center justify-center h-12 px-8 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors"
+                            className="inline-flex items-center justify-center h-12 px-8 rounded-xl border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors"
                         >
                             Read the Docs
                         </Link>
@@ -33,7 +33,7 @@ export function Footer() {
             </div>
 
             {/* Footer Links */}
-            <div className="border-t border-border">
+            <div className="border-t border-border/60">
                 <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
                         <div className="col-span-2 lg:col-span-2">
@@ -72,12 +72,12 @@ export function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
+                    <div className="mt-12 pt-8 border-t border-border/60 flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
                         <p>© {new Date().getFullYear()} EventGraph. All rights reserved.</p>
                         <div className="flex space-x-4 mt-4 md:mt-0">
-                            <Link href="#" className="hover:text-foreground transition-colors">Twitter</Link>
-                            <Link href="#" className="hover:text-foreground transition-colors">GitHub</Link>
-                            <Link href="#" className="hover:text-foreground transition-colors">Discord</Link>
+                            <Link href="https://x.com/eventgraphai" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">Twitter</Link>
+                            <Link href="https://github.com/eventgraphai" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">GitHub</Link>
+                            <Link href="https://discord.gg/eventgraphai" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">Discord</Link>
                         </div>
                     </div>
                 </div>
